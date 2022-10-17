@@ -1,0 +1,605 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Hwang&#39;s Blog</title>
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://hwang.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Hwang&#39;s Blog - Atom Feed" href="https://hwang.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159350557-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-159350557-1');
+  </script>
+    
+
+  <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
+📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；<br>
+🌍 托管于 Github，感谢 Github.com 提供的服务器资源  <br>
+✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
+👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
+这里显然不是什么技术博客，也不会有太多值得期待的干货。" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
+    
+      <a href="https://hwang.top/tag/CjydnGrXlu/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        也许还行
+      </a>
+    
+      <a href="https://growing.zhubai.love" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        竹白
+      </a>
+    
+      <a href="http://newsletter.hwang.top" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        Newsletter
+      </a>
+    
+    <a href="https://hwang.top/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
+</div>
+
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      
+
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hao-kan-you-du-te-de-tou-xiang-na-li-zhao/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          好看又独特的头像哪里找？
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-02-09</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+本文以发布于少数派：https://sspai.com/post/65026
+推荐在少数派阅读
+
+
+最近 Clubhouse 的窜火，他们把自己活跃用户头像作为图标。头像在 Clubhouse 中扮演了很重要的角色，在一个 Room 里面...
+      </div>
+      <a href="https://hwang.top/post/hao-kan-you-du-te-de-tou-xiang-na-li-zhao/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hao-kan-you-du-te-de-tou-xiang-na-li-zhao.png" alt="好看又独特的头像哪里找？">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwangs-read-list-ep/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP18
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-02-01</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>这是不定期更新的个人阅读目录，在我的输入流程中，文章从RSS以及其他不同平台获取，这里存放那些我好好看了的文章。<br>
+ps. 现在链接都是正常的了。</p>
+</blockquote>
+
+      </div>
+      <a href="https://hwang.top/post/hwangs-read-list-ep/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP18">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/ri-ji-20210130-wo-xi-wang-de-tuan-dui-guan-xi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          日记20210130-我希望的团队关系
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-01-30</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        2021年，开年就遭受了了巨大的打击，本就不富裕的部门正式面临重组了。
+我很幸运，毕业了就直接被导师拉着创业了，没有经历过面试的毒打。进入职场相对顺利，加上导师非常认可我的能力，时常会给自己一种「天选之子」的错觉。所以在很多时候，表达上，并...
+      </div>
+      <a href="https://hwang.top/post/ri-ji-20210130-wo-xi-wang-de-tuan-dui-guan-xi/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/docker-zhong-nginx-ruan-lian-jie-de-pei-zhi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Docker 中 Nginx 软链接的配置
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-01-26</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        需求描述
+A 服务器硬盘空间用完了，需要扩容，所以需要在新扩展的磁盘中做一个的软链接，用于存放静态文件。其中，nginx 做代理静态文件服务，用于部分资源的下载业务。同时，nginx 运行在 docker 中。
+所以需要在旧的路径中读取到新...
+      </div>
+      <a href="https://hwang.top/post/docker-zhong-nginx-ruan-lian-jie-de-pei-zhi/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/stata-xu-ni-nei-cun-bu-zu-bao-cuo-io-error-writing-dta-file/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Stata 虚拟内存不足，报错“I/O error writing .dta file”
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-01-21</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        错误信息
+具体报错为：
+I/O error writing .dta file Usually such I/O errors are caused by disk or file system being full
+
+解决步骤
+
+在c盘以...
+      </div>
+      <a href="https://hwang.top/post/stata-xu-ni-nei-cun-bu-zu-bao-cuo-io-error-writing-dta-file/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/stata-xu-ni-nei-cun-bu-zu-bao-cuo-io-error-writing-dta-file.png" alt="Stata 虚拟内存不足，报错“I/O error writing .dta file”">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/1/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List — EP17
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-01-17</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+由于 IFTTT 收费策略变更（没办法自动化了），加之最近工作繁忙，这部分内容已经很久没有更新了。
+正在思考如何持续的整理内容。
+过去我一直是 RSS 阅读一部分，好的内容 Read It Later （无论是 Pocket 还是 Ins...
+      </div>
+      <a href="https://hwang.top/post/1/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List — EP17">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/2021-nian-shu-mei-pai-de-home-assistant-shou-dong-an-zhuang-fang-shi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+           2021年 树莓派的 Home Assistant 手动安装方式
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-01-10</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        时间来到2021年，Home Assistant 的 Python 最低支持版本已经来到了3.8，可惜的是，Raspberry Pi 的 Python 最新版还是3.7.2，所以手动安装的第一步就是需要手动安装 Python 3.8：
+St...
+      </div>
+      <a href="https://hwang.top/post/2021-nian-shu-mei-pai-de-home-assistant-shou-dong-an-zhuang-fang-shi/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwangs-read-list-ep16/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List — EP16
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-12-28</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+由于 IFTTT 收费策略变更（没办法自动化了），加之最近工作繁忙，这部分内容已经很久没有更新了。
+正在思考如何持续的整理内容。
+过去我一直是 RSS 阅读一部分，好的内容 Read It Later （无论是 Pocket 还是 Ins...
+      </div>
+      <a href="https://hwang.top/post/hwangs-read-list-ep16/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List — EP16">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/bi-ye-lun-wen/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          毕业论文
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-12-02</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+毕业已经一年有余，今天导师说要拿我的毕业论文给学妹学习，看看能不能再深入研究一下，能不能投稿发表。我想想甚好，论文基本上是我在大三的时候完成的，大四的时候把实证部分详细做了一遍，后续因为参加实习、创业工作，没有后续了。
+原本研究的是母亲自...
+      </div>
+      <a href="https://hwang.top/post/bi-ye-lun-wen/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/ios-zhong-de-shu-ju-cheng-xian/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          iOS 中的数据呈现
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-11-28</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+手机早已是现代生活的重要组成部分，手机与生活越来越密不可分，手机所手机的数据也越来越多。一些数据是需要被用户感知，那么如何传达这些信息呢？通过各种图表，合理的呈现数据，自然是最好的选择。
+在 iOS 中，有为了帮助减少使用手机，系统设置中...
+      </div>
+      <a href="https://hwang.top/post/ios-zhong-de-shu-ju-cheng-xian/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/ios-zhong-de-shu-ju-cheng-xian.png" alt="iOS 中的数据呈现">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-015/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 015
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-11-28</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+
+一日一技｜只要一台电脑，轻松获取米家设备 token
+
+不管你是想通过 Homebridge 还是 Home Assistant 把米家设备添加到苹果的 HomeKit...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-015/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 015">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/30-sui-qian-shi-xian-cai-wu-zi-you-de-jue-wu/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          「30岁」前实现财务自由的觉悟
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-11-14</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+本文是作者本科阶段和一位导师谈话后的感想。
+这次谈话，老师大致上是在劝导我们需要更加「出事」，直面欲望，要带着「30岁」前实现财务自由的觉悟去努力
+
+老师所说的30岁前实现财务自由，我的理解是：肯定俗世的物质追求的意义。首先，实现财务自由...
+      </div>
+      <a href="https://hwang.top/post/30-sui-qian-shi-xian-cai-wu-zi-you-de-jue-wu/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-013 (Hwangs 的冲突副本 2020-11-13)/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 014
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-10-15</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+
+开源、可定制的网页批注工具——Hypothesis
+
+Matrix 是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选 Matri...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-013 (Hwangs 的冲突副本 2020-11-13)/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 014">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-013/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP  013
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-10-15</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+
+开源、可定制的网页批注工具——Hypothesis
+
+Matrix 是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选 Matri...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-013/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP  013">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-012/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 012
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-10-07</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+
+家庭 10Gbps 网络施工指南
+
+千兆网已经普及了块一二十年，其他计算设备瓶颈都在大幅改善，存储设备速度都翻了快 30 倍（HDD 普遍连续读取速度为 160MB/s...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-012/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 012">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/swift-ui-ji-chu-designcode-de-xue-xi-bi-ji-er/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          iOS 开发学习笔记02 —— Swift UI 基础（ Design+Code 的学习笔记）
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-10-05</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        States and Animations
+SwiftUI 会自动补全量高 states 之间的动画。和 Keynote 的 Magic Move 一样；
+@State var show = true
+.onTapGesture {
+	se...
+      </div>
+      <a href="https://hwang.top/post/swift-ui-ji-chu-designcode-de-xue-xi-bi-ji-er/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/samba-de-yi-xie-jian-dan-jing-yan/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Samba 的一些简单经验
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-10-05</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        1. 合理有效的重装smb方式：
+如果你弄坏了 smb 的配置，那么可以：
+添加 —purge 参数 卸载
+$ sudo apt-get remove --purge samba-common
+$ sudo apt-get remove -...
+      </div>
+      <a href="https://hwang.top/post/samba-de-yi-xie-jian-dan-jing-yan/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-011/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 011
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-08-19</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        很久没更新了，也没好好弄；
+
+注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+
+Mac 视觉史 vol.1：从 Macintosh 到 Mac OS
+
+微信号 cloverfield11 功能介绍 夜晚正式开始。 200...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-011/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 011">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/windows-server-yu-kong-yu-xia-ji-suan-ji-guan-li-yuan-zhi-jian-de-wen-jian-ge-chi-fang-an/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Windows Server 域控——域下计算机管理员之间的文件隔离方案。
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-08-07</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        情况：
+域内有一批 Windows server 操作系统的计算机，Windows sever 可以保障两个用户同时登录使用。
+
+为保障用户体验，两个用户均为管理员。
+为保障用户隐私需要在 D 盘做文件夹隔离。
+一般情况下，这种需求，通过挂...
+      </div>
+      <a href="https://hwang.top/post/windows-server-yu-kong-yu-xia-ji-suan-ji-guan-li-yuan-zhi-jian-de-wen-jian-ge-chi-fang-an/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/ru-he-zai-windows-de-gong-xiang-wen-jian-jia-zhong-chuang-jian-wen-jian-tu-biao.png" alt="Windows Server 域控——域下计算机管理员之间的文件隔离方案。">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/dropzone-ye-xu-neng-cheng-wei-ni-mac-shang-de-launch-center-pro/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Dropzone 也许能成为你 Mac 上的 Launch Center Pro
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-07-24</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+本文发布于少数派，推荐前往少数派阅读
+https://sspai.com/post/61257
+
+Launch Center Pro（以下简称LCP）作为 iOS 上享有盛誉的效率应用，其卖点之一就是类似按钮的设计利于肌肉记忆形成。就是拥...
+      </div>
+      <a href="https://hwang.top/post/dropzone-ye-xu-neng-cheng-wei-ni-mac-shang-de-launch-center-pro/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/dropzone-ye-xu-neng-cheng-wei-ni-mac-shang-de-launch-center-pro.png" alt="Dropzone 也许能成为你 Mac 上的 Launch Center Pro">
+    
+  </div>
+  
+      </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+      <a href="https://hwang.top/" class="btn btn-white">
+        <i class="ri-arrow-left-line mr-4"></i>
+        上一页
+      </a>
+    
+    
+      <a href="https://hwang.top/page/3/" class="btn btn-white">
+        下一页
+        <i class="ri-arrow-right-line ml-4"></i>
+      </a>
+    
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  <p style="text-align: left; color: brown;">
+    生而为人，应该能够换尿布、策划入侵、杀猪、开船、造房子、
+    写十四行诗、算账、建墙、正骨、抚慰临终之人、接受命令、
+    下达命令、合作、独行、解决方程式、分析新问题、
+    清理马粪、编程、烹饪美食、高效战斗、英勇牺牲。
+    专业分工是给昆虫准备的。
+</p>
+    <br>
+    <br>
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+
+    <br>
+    <p>...</p>
+    <br>
+    <center> <img
+            src="https://img.shields.io/badge/dynamic/json?color=da282a&label=%E5%B0%91%E6%95%B0%E6%B4%BE%E5%85%B3%E6%B3%A8&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dsspai%26queryKey%3Dhwang" />
+    </center>
+</footer>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://hwang.top/media/scripts/main.js"></script>
+</body>
+
+</html>

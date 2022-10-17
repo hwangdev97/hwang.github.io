@@ -1,0 +1,656 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Hwang&#39;s Blog</title>
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://hwang.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Hwang&#39;s Blog - Atom Feed" href="https://hwang.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159350557-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-159350557-1');
+  </script>
+    
+
+  <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
+📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；<br>
+🌍 托管于 Github，感谢 Github.com 提供的服务器资源  <br>
+✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
+👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
+这里显然不是什么技术博客，也不会有太多值得期待的干货。" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
+    
+      <a href="https://hwang.top/tag/CjydnGrXlu/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        也许还行
+      </a>
+    
+      <a href="https://growing.zhubai.love" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        竹白
+      </a>
+    
+      <a href="http://newsletter.hwang.top" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        Newsletter
+      </a>
+    
+    <a href="https://hwang.top/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
+</div>
+
+    <div class="max-w-4xl w-full mx-auto ">
+      
+        <header class="flex py-16 md:py-32 mt-12 flex-col md:flex-row px-4 md:px-0 animated fadeIn">
+  <div class="flex-1 order-2 md:order-1 md:pr-16">
+    <div class="text-4xl font-bold text-center md:text-left">
+      Hwang&#39;s Blog
+    </div>
+    <div class="text-xl text-gray-500 mt-4 text-center md:text-left">
+      欢迎来到 Hwang 的小博客 <br>
+📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；<br>
+🌍 托管于 Github，感谢 Github.com 提供的服务器资源  <br>
+✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
+👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
+这里显然不是什么技术博客，也不会有太多值得期待的干货。
+    </div>
+    
+    
+      <div class="mt-8 flex items-center">
+        
+          <div class="text-gray-500 mr-2">
+            Follow me 👉
+          </div>
+        
+        
+          
+        
+          
+            
+              <a href="mailto:hwangdev97@gmail.com" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
+                <i class="ri-mail-line"></i>
+              </a>
+            
+          
+        
+          
+        
+          
+            
+              <a href="https://twitter.com/TSplone" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
+                <i class="ri-twitter-line"></i>
+              </a>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    
+  </div>
+  <div class="md:mx-8 flex-shrink-0 self-start rounded-full border-4 border-dotted border-transparent hover:border-yellow-50 p-2 w-32 h-32 order-1 md:order-2 mx-auto s3-dotted">
+    <img class="rounded-full object-cover" src="https://hwang.top/images/avatar.png?v=1665986032292" alt="Hwang&#39;s Blog" width="100%" height="100%">
+  </div>
+</header>
+      
+
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+      <i class="ri-star-line text-orange-200 absolute text-2xl left-0 ml-1 rotate-90"></i>
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/kai-yuan-yi-ge-tou-xiang-sheng-cheng-qi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          开源一个头像生成器
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-01-26</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        为了个用户提供一个独特又有风格的头像，我们开发制作了一款很棒的头像生成器。
+长话短说，如果你想生成一个有趣的头像：
+
+可以前往线上体验地址 ：
+https://avatar.gaoxiazhitu.com
+或扫描下方二维码 (微信中，请选择...
+      </div>
+      <a href="https://hwang.top/post/kai-yuan-yi-ge-tou-xiang-sheng-cheng-qi/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/kai-yuan-yi-ge-tou-xiang-sheng-cheng-qi.png" alt="开源一个头像生成器">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/yi-ge-xiao-cheng-jiu-or-app-store-bian-ji-mei-zhou-tui-jian/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          ✅ 一个小成就 ｜ App Store 编辑每周推荐 
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022-07-01</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        Sleepy Coffee：喝好咖啡睡好觉
+
+...
+      </div>
+      <a href="https://hwang.top/post/yi-ge-xiao-cheng-jiu-or-app-store-bian-ji-mei-zhou-tui-jian/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/yi-ge-xiao-cheng-jiu-or-app-store-bian-ji-mei-zhou-tui-jian.png" alt="✅ 一个小成就 ｜ App Store 编辑每周推荐 ">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/macos-monterey-yi-chu-python2-hou-de-yi-xie-edge-case/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          macOS Monterey 移除 Python2 后的一些 edge case
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022-04-20</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+macOS Monterey 移除 Python2 的 Side effects #jike
+
+macOS Monterey 开始着手移除 Python2 的事情，对我们这些 Front-end 开发者来说可能会遇到 VSCode 的 「...
+      </div>
+      <a href="https://hwang.top/post/macos-monterey-yi-chu-python2-hou-de-yi-xie-edge-case/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/4-yue-1-ri-te-kan-quan-xin-xiao-lu-ying-yong-ming-tian-zai-zuo-todo/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          4月1日特刊 —— 📒 全新效率应用：明天再做 —— ToDo
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022-04-01</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        人们总是会想，这事要是能明天再做，该多好呀。
+为了让大家不再愧疚于自己今日的碌碌无为，将希望寄托于明日。我为大家带来了与众不同且全新的效率应用 ToDo App 是的， ToDo， 我将其命名为 TomorrowDo， ToDo。 中文名「...
+      </div>
+      <a href="https://hwang.top/post/4-yue-1-ri-te-kan-quan-xin-xiao-lu-ying-yong-ming-tian-zai-zuo-todo/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/04-or-zi-yi-sheng-chang-by-hwang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          #04 ｜ 恣意生长  by Hwang
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022-03-22</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        Hi，好久不见。本期间隔时间稍微长了一些呀，因为最近都比较忙，工作也比较忙，自己的小项目也遇到了些困难。不过好在方向都是好的，做自己愿意做的事情，总是快乐的。
+这段时间我听了几期感觉还不错的播客，推荐给大家：
+
+[中美 SaaS 对比：差距...
+      </div>
+      <a href="https://hwang.top/post/04-or-zi-yi-sheng-chang-by-hwang/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/jian-diao-chang-fa/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          剪掉了长发 
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022-02-26</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        剪掉了小啾啾造型的长头发。
+疫情开始的时候留的头发，之后一直维持在这个长度，平时就是剪掉两边，扎个小jiu jiu。
+留着长头发有很多感受，其中最重要的&quot;女孩子真不容易&quot;。
+一些男孩可能不知道的事实
+
+洗头很麻烦，费洗发...
+      </div>
+      <a href="https://hwang.top/post/jian-diao-chang-fa/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/03-or-zi-yi-sheng-chang-by-hwang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          #03 ｜ 恣意生长 by Hwang
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022-02-08</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+恣意生长是一份自我观察的 Newsletter。如果不输出，那么输入会显得不那么有意义，自大地以为自己“无所不知”。所以做一份 Newsletter 似乎会是一个审视自己的好机会。这份 Newsletter 会为读者提供个人的关于视角/产...
+      </div>
+      <a href="https://hwang.top/post/03-or-zi-yi-sheng-chang-by-hwang/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/02-or-zi-yi-sheng-chang-by-hwang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          #02 ｜ 恣意生长  by Hwang
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-12-19</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+恣意生长是一份自我观察的 Newsletter。如果不输出，那么输入会显得不那么有意义，自大地以为自己“无所不知”。所以做一份 Newsletter 似乎会是一个审视自己的好机会。这份 Newsletter 会为读者提供个人的关于视角/产...
+      </div>
+      <a href="https://hwang.top/post/02-or-zi-yi-sheng-chang-by-hwang/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/01-or-zi-yi-sheng-chang-by-hwang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          #01  ｜ 恣意生长  by Hwang
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-11-16</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+恣意生长是一份自我观察的 Newsletter。如果不输出，那么输入会显得不那么有意义，自大的以为自己“无所不知”。所以做一份 Newsletter 似乎会是一个审视自己的好机会。这份 Newsletter 会为读者提供个人的关于视角/产...
+      </div>
+      <a href="https://hwang.top/post/01-or-zi-yi-sheng-chang-by-hwang/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwangs-read-list-ep22/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 22
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-08-26</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+确实许久未更新了。最近自己的事情忽然多了起来。
+这是不定期更新的个人阅读目录，在我的输入流程中，文章从RSS以及其他不同平台获取，这里存放那些我好好看了的文章。
+
+Basecamp's new etiquette regarding so...
+      </div>
+      <a href="https://hwang.top/post/hwangs-read-list-ep22/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 22">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/yong-notion-bu-shu-ni-de-ge-ren-bo-ke-ji-yu-nobelium-vercel-de-ge-ren-bo-ke-da-jian-zhi-nan/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          用 Notion 部署你的个人博客 —— 基于 Nobelium + Vercel 的个人博客搭建指南
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-05-20</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        静态博客的平台层出不穷，对于普通人而言，部署个人博客也早已不再是一件难事。本文将介绍通过 Nobelium 项目将个人博客托管到 Vercel，再绑定个人域名的操作过程。
+如果你按照本文操作，那么最后能够收获外观不错的个人博客，并且你可以在...
+      </div>
+      <a href="https://hwang.top/post/yong-notion-bu-shu-ni-de-ge-ren-bo-ke-ji-yu-nobelium-vercel-de-ge-ren-bo-ke-da-jian-zhi-nan/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwangs-read-list-ep-21/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 21
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-04-29</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+这是不定期更新的个人阅读目录，在我的输入流程中，文章从RSS以及其他不同平台获取，这里存放那些我好好看了的文章。
+
+The business of influence with MKBHD
+
+Nilay Patel talks with ...
+      </div>
+      <a href="https://hwang.top/post/hwangs-read-list-ep-21/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 21">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/k8s-zhong-de-ingressnfs-de-chi-jiu-hua-cun-chu/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          K8S 中的 Ingress/NFS的持久化存储
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-04-28</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        K8S 中的 Ingress/NFS的持久化存储
+
+与 Ingress 的链接方式相对应的是 Nodeport
+Ingress 与 service 相关联
+使用ingress 后可以居于域名对pod提供的服务进行访问；
+
+部署ingress...
+      </div>
+      <a href="https://hwang.top/post/k8s-zhong-de-ingressnfs-de-chi-jiu-hua-cun-chu/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/elasticsearch-shi-yong-logstash-jin-xing-csv-shu-ju-de-dao-ru/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Elasticsearch 的管理运维之数据导入——使用 Logstash 进行 CSV 数据的导入
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-04-28</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+安装：
+
+Download Logstash Free | Get Started Now | Elastic
+下载对应的 logstash 版。
+
+编辑导入文件
+
+官方文档：
+Csv filter plugin | Logstash R...
+      </div>
+      <a href="https://hwang.top/post/elasticsearch-shi-yong-logstash-jin-xing-csv-shu-ju-de-dao-ru/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/elasticsearch-guan-li/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Elasticsearch 的管理运维之重启集群
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-04-24</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        重启 Elasticsearch 集群
+
+
+关闭集群
+
+
+第一步：关闭自动分布
+curl -X PUT &quot;localhost:9200/_cluster/settings?pretty&quot; -H 'Content-Type...
+      </div>
+      <a href="https://hwang.top/post/elasticsearch-guan-li/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/zai-ubuntu-zhong-bu-shu-elasticsearch-ji-qun/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          在 Ubuntu 中部署 Elasticsearch 集群
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-04-19</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="step-1-install-java">Step 1. Install Java</h2>
+<p>给每一台服务器安装 java 环境</p>
+<p><code>sudo apt install openjdk-15-jdk</code></p>
+
+      </div>
+      <a href="https://hwang.top/post/zai-ubuntu-zhong-bu-shu-elasticsearch-ji-qun/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwangs-read-list-ep-20/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 20
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-03-27</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+这是不定期更新的个人阅读目录，在我的输入流程中，文章从RSS以及其他不同平台获取，这里存放那些我好好看了的文章。
+
+The business of influence with MKBHD
+
+Nilay Patel talks with ...
+      </div>
+      <a href="https://hwang.top/post/hwangs-read-list-ep-20/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 20">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/xue-xi-elasticsearch-ep01/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          学习 Elasticsearch ! EP01
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-03-18</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        macOS 上安装
+使用 Homebrew 进行安装，当然可以先安装好 Java 环境；
+brew install elasticsearch
+
+安装目录在：
+/usr/local/Cellar/elasticsearch-full
+
+启动...
+      </div>
+      <a href="https://hwang.top/post/xue-xi-elasticsearch-ep01/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwangs-read-list-ep-19/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 19
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-03-17</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+这是不定期更新的个人阅读目录，在我的输入流程中，文章从RSS以及其他不同平台获取，这里存放那些我好好看了的文章。
+
+独家对话浑水创始人：调查欢聚持续一年，接下来百度有两个选择 | 棱镜
+
+十年前我们去调查中国公司，可能就是数一数卡车的数量...
+      </div>
+      <a href="https://hwang.top/post/hwangs-read-list-ep-19/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 19">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/jing-yan-fen-xi-ce-lue-jing-du-yi-the-competitive-saving-motive-evidence-from-rising-sex-ratios-and-savings-rates-in-china-wei-li-yi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          经验分析策略精读--以 The Competitive Saving Motive: Evidence from Rising Sex Ratios and Savings Rates in China 为例（一）
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-03-01</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+本文发布于数据seminar公众号
+
+毋庸讳言，当前经济学的潮流逐渐转向依托数据与计量分析的经验研究范式。
+主流经济学经验研究已经实现从相关分析到因果分析的跨步。计量经济学的发展使得经济学家能够通过对于调查数据的熟练使用，实现因果效应分析...
+      </div>
+      <a href="https://hwang.top/post/jing-yan-fen-xi-ce-lue-jing-du-yi-the-competitive-saving-motive-evidence-from-rising-sex-ratios-and-savings-rates-in-china-wei-li-yi/" class="btn">
+        👀
+      </a>
+    </div>
+    
+  </div>
+  
+      </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+    
+      <a href="https://hwang.top/page/2" class="btn btn-white">
+        下一页
+        <i class="ri-arrow-right-line ml-4"></i>
+      </a>
+    
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  <p style="text-align: left; color: brown;">
+    生而为人，应该能够换尿布、策划入侵、杀猪、开船、造房子、
+    写十四行诗、算账、建墙、正骨、抚慰临终之人、接受命令、
+    下达命令、合作、独行、解决方程式、分析新问题、
+    清理马粪、编程、烹饪美食、高效战斗、英勇牺牲。
+    专业分工是给昆虫准备的。
+</p>
+    <br>
+    <br>
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+
+    <br>
+    <p>...</p>
+    <br>
+    <center> <img
+            src="https://img.shields.io/badge/dynamic/json?color=da282a&label=%E5%B0%91%E6%95%B0%E6%B4%BE%E5%85%B3%E6%B3%A8&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dsspai%26queryKey%3Dhwang" />
+    </center>
+</footer>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://hwang.top/media/scripts/main.js"></script>
+</body>
+
+</html>

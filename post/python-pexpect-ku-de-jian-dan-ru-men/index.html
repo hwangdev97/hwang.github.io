@@ -1,0 +1,567 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Python Pexpect 库的简单入门 - Hwang&#39;s Blog</title>
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://hwang.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Python Pexpect 库的简单入门 - Hwang&#39;s Blog - Atom Feed" href="https://hwang.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159350557-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-159350557-1');
+  </script>
+    
+
+  <meta name="description" content="
+2019.03.26
+Hwang
+参考：
+1.https://www.jianshu.com/p/cfd163200d12
+2.https://blog.csdn.net/Cloud_Strife0/article/details/822..." />
+  <meta property="og:title" content="Python Pexpect 库的简单入门 - Hwang&#39;s Blog">
+  <meta property="og:description" content="
+2019.03.26
+Hwang
+参考：
+1.https://www.jianshu.com/p/cfd163200d12
+2.https://blog.csdn.net/Cloud_Strife0/article/details/822..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://hwang.top/post/python-pexpect-ku-de-jian-dan-ru-men/" />
+  <meta property="og:image" content="https://hwang.top/post-images/python-pexpect-ku-de-jian-dan-ru-men.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="Python Pexpect 库的简单入门 - Hwang&#39;s Blog">
+  <meta name="twitter:description" content="
+2019.03.26
+Hwang
+参考：
+1.https://www.jianshu.com/p/cfd163200d12
+2.https://blog.csdn.net/Cloud_Strife0/article/details/822...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://hwang.top/post/python-pexpect-ku-de-jian-dan-ru-men/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://hwang.top/media/css/prism-synthwave84.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://hwang.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Hwang&#39;s Blog
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          Python Pexpect 库的简单入门
+        </h1>
+        
+          <img src="https://hwang.top/post-images/python-pexpect-ku-de-jian-dan-ru-men.png" alt="Python Pexpect 库的简单入门" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2019-03-26 · 12 min read</div>
+          
+            <a href="https://hwang.top/tag/Zf-hLAESr/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              python
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <blockquote>
+<p>2019.03.26<br>
+Hwang<br>
+参考：<br>
+1.<a href="https://www.jianshu.com/p/cfd163200d12">https://www.jianshu.com/p/cfd163200d12</a><br>
+2.<a href="https://blog.csdn.net/Cloud_Strife0/article/details/82217494">https://blog.csdn.net/Cloud_Strife0/article/details/82217494</a></p>
+</blockquote>
+<h2 id="1-pexpect-是什么">1. Pexpect  是什么</h2>
+<blockquote>
+<p>pexpect 是 Python 语言的类 Expect 实现。<br>
+而 expect 主要用于模拟人机对话，简单地说就是可以使用正则匹配捕捉系统的提问（ssh登录需要输入密码等），并且根据捕捉到的提问进行不同的操作。<br>
+例子：</p>
+</blockquote>
+<!-- more -->
+<pre><code class="language-python">import pexpect
+import sys
+
+# 用spawn来执行一个指令
+child = pexpect.spawn('ftp ftp.openbsd.org')
+# 用expect等待指定的关键字’name‘
+child.expect('(?i)name .*: ')
+# 若上一步匹配到了，则向计算机输入name
+child.sendline('anonymous')
+# 用expect等待指定的关键字’password‘
+child.expect('(?i)password')
+# 若上一步匹配到了，则向计算机输入password
+child.sendline('pexpect@sourceforge.net')
+# 用expect等待指定的关键字’ftp&gt;‘
+child.expect('ftp&gt; ')
+# 若上一步成功匹配，则意味着进入了ftp连接，现在做一些操作
+child.sendline('cd /pub/OpenBSD/3.7/packages/i386')
+child.expect('ftp&gt; ')
+child.sendline('bin')
+child.expect('ftp&gt; ')
+child.sendline('prompt')
+child.expect('ftp&gt; ')
+child.sendline('pwd')
+child.expect('ftp&gt; ')
+print(&quot;Escape character is '^]'.\n&quot;)
+sys.stdout.write (child.after)
+sys.stdout.flush()
+child.interact() # Escape character defaults to ^]
+# At this point this script blocks until the user presses the escape character
+# or until the child exits. The human user and the child should be talking
+# to each other now.
+
+# At this point the script is running again.
+print('Left interactve mode.')
+
+# The rest is not strictly necessary. This just demonstrates a few functions.
+# This makes sure the child is dead; although it would be killed when Python exits.
+if child.isalive():
+    child.sendline('bye') # Try to ask ftp child to exit.
+    child.close()
+# Print the final state of the child. Normally isalive() should be FALSE.
+if child.isalive():
+    print('Child did not exit gracefully.')
+else:
+    print('Child exited gracefully.')
+</code></pre>
+<h2 id="2-用法">2. 用法</h2>
+<h3 id="21-spawn">2.1 spawn()</h3>
+<pre><code class="language-python">demo_ssh = pexpect.spawn('ssh xxx@&lt;ip&gt;')
+</code></pre>
+<p>如上例中，spawn() 返还的是句柄（handle）<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，一般用法：<code>spawn(&lt;cmd 命令&gt;)</code> ， 后续的操作都会基于这里定义的变量 <code>demo_ssh</code>	。</p>
+<blockquote>
+<p>注意: spawn() ，或者说 pexpect 并不会转译任何特殊字符 比如 <code>| * </code>字符在Linux的shell中有特殊含义，但是在 pexpect 中不会转译它们，如果在 linux 系统中想使用这些符号的正确含义就必须加上 shell 来运行，这是很容易犯的一个错误。<br>
+正确的方式：</p>
+<pre><code class="language-python">process = pexpect.spawn('/bin/bash -c &quot;ls -l | grep LOG &gt; log_list.txt&quot;')
+process.expect(pexpect.EOF)
+</code></pre>
+</blockquote>
+<h4 id="参数">参数</h4>
+<ul>
+<li>timeout</li>
+</ul>
+<p>设置超时时间（30默认）</p>
+<ul>
+<li>
+<p>maxread 缓存设置<br>
+默认 2000 字符</p>
+</li>
+<li>
+<p>searchwindowsize - 模式匹配阀值</p>
+</li>
+<li>
+<p>logfile - 运行输出控制</p>
+</li>
+<li>
+<p>logfile_read - 获取标准输出的内容</p>
+</li>
+<li>
+<p>logfile_send - 获取发送的内容</p>
+</li>
+<li>
+<p>cwd - 指定命令执行的目录</p>
+</li>
+<li>
+<p>env - 指定环境变量</p>
+</li>
+<li>
+<p>ignore_sighup - 是否过滤 SIGHUP 信号</p>
+</li>
+<li>
+<p>delaybeforesend - 字符发送延时</p>
+</li>
+</ul>
+<h3 id="22-expect">2.2 expect()</h3>
+<p>关键字匹配，当spawn 启动一个程序并且返回程序控制句柄后，可以用expect() 来指定匹配内容。 使用 expect() 使用正则表达式来匹配。</p>
+<h3 id="221-expect_exact">2.2.1 expect_exact()</h3>
+<p>精确匹配，它的使用和 expect() 是一样的，唯一不同的就是它的匹配列表中不再使用正则表达式。<br>
+从性能上来说 expect_exact() 要更好一些，因为即使你没有使用正则表达式而只是简单的用了几个字符 expect() 也会先将它们转换成正则表达式模式然后再搜索，但 expect_exact() 不会，而且也不会把一些特殊符号转换掉。</p>
+<h3 id="222expect_list">2.2.2expect_list()</h3>
+<p>预转换匹配，使用方式和 expect() 一样，唯一不同的就是它里面接受的正则表达式列表只会转换一次。</p>
+<h3 id="223-expect_loop">2.2.3 expect_loop()</h3>
+<p>用于从标准输入中获取内容，loop这个词代表它会进入一个循环，必须要从标准输入中获取到关键字才会往下继续执行。</p>
+<h3 id="23-send">2.3 send()</h3>
+<p>发送关键字。用来向程序发送指定的字符串。</p>
+<h3 id="231-sendline">2.3.1 sendline()</h3>
+<p>发送带回车符的字符串。</p>
+<h3 id="232-sendcontrol">2.3.2 sendcontrol()</h3>
+<p>发送控制信号</p>
+<h3 id="233-sendeof">2.3.3 sendeof()</h3>
+<p>发送 EOF 信号</p>
+<h3 id="234-sendintr">2.3.4 sendintr()</h3>
+<p>发送终止信号</p>
+<h3 id="24-interact-将控制权交给用户">2.4 interact() - 将控制权交给用户</h3>
+<center><span style="font-size:40px">🧡</span></center>
+<p>interact() 表示将控制权限交给用户（或者说标准输入）。一般情况下 pexpect 会接管所有的输入和输出，但有的时候还是希望用户介入，或者仅仅是为了完成一部分工作的时候， interact() 就很有用了。</p>
+<h3 id="25-close">2.5 close()</h3>
+<p>停止应用程序<br>
+如果想中途关闭子程序，那么可以用 close 来完成，调用这个方法后会返回这个程序的返回值。<br>
+如果设置 force=True 会强行关闭这个程序，大概的过程就是先发送 SIGHUP 和 SIGINT 信号，如果都无效的话就发 SIGKILL 信号，反正不管怎么样都会保证这个程序被关闭掉。<br>
+多次调用这个方法是允许的，但是不保证每次都能返回正确的返回值。尽量不要这么做，如果想保证程序被关闭的话只要设置force的值就可以了。</p>
+<h3 id="26-terminate">2.6 terminate()</h3>
+<p>可以看作是上面 close() 的别名</p>
+<h3 id="27-kill">2.7 Kill()</h3>
+<p>发送 SIGKILL 信号，向子程序发送 SIGKILL 的信号。</p>
+<h3 id="28-flush">2.8 flush()</h3>
+<p>什么都不干，只是为了与文件方法兼容而已。</p>
+<h3 id="29-isalive">2.9 isalive()</h3>
+<p>检查子程序运行状态。<br>
+检查被调用的子程序是否正在运行，这个方法是运行在非阻断模式下面的。<br>
+如果获得的返回是 True 表示子程序正在运行；返回 False 则表示程序运行终止。</p>
+<h3 id="210-isatty">2.10 isatty()</h3>
+<p>检查是否运行在 TTY （即控制台）设备上</p>
+<h3 id="211-next">2.11 next()</h3>
+<p>返回下一行内容，和操作文件一样，这个方法也是返回缓存中下一行的内容。</p>
+<h3 id="212-read">2.12 read()</h3>
+<p>返回剩下的所有内容。</p>
+<p>获取子程序返回的所有内容，一般情况下我们可以用 expect 来期待某些内容，然后通过 process.before 这样的方式来获取，但这种方式有一个前提：那就是必须先 expect 某些字符，然后才能用 process.before 来获取缓存中剩下的内容。</p>
+<p>read() 的使用很不同，它期待一个 EOF 信号，然后将直到这个信号之前的所有输出全部返回，就像读一个文件那样。<br>
+一般情况下，交互式程序只有关闭的时候才会返回 EOF ，比如用 by 命令关闭 ftp 服务器，或者用 exit 命令关闭一个 ssh 连接。<br>
+这个方法使用范围比较狭窄，因为完全可以用 expect.EOF 方式来代替。当然如果是本机命令，每执行完一次之后都会返回 EOF ，这种情况下倒是很有用：</p>
+<pre><code>process = pexpect.spawn('ls -l')output = process.read()print output
+</code></pre>
+<p>看起来这么做有点无聊？但我想一定有什么理由支持这个方法。<br>
+可以用指定 read(size=-1) 的方式来设置返回的字符数，如果没有设置或者设置为负数则返回所有内容，正数则返回指定数量的内容，返回的内容是字符串形式。</p>
+<h3 id="213-readlines-返回列表模式的所有输出">2.13 readlines() - 返回列表模式的所有输出</h3>
+<p>返回一个列表，列表中的每个元素都是一行（包括\r\n字符）。</p>
+<h3 id="214-setecho-子程序响应模式">2.14 setecho() - 子程序响应模式</h3>
+<p>设置子程序运行时的响应方式，一般情况下向子程序发送字符的时候，这些字符都会在标准输出上显示出来，这样你可以看到你发送出去的内容，但是有的时候，我们不需要显示，那么就可以用这个方法来设置了。<br>
+注意，必须在发送字符之前设置，设置之后在之后的代码中都一直有效。比如：</p>
+<pre><code>process = pexpect.spawn('cat')# 默认情况下，下面的1234这个字符串会显示2次，一次是pexpect返回的，一次是cat命令返回的process.sendline(&quot;1234&quot;)# 现在我们关闭pexpect()的echo功能process.setecho(False)# 下面的字符只会显示一次了，这是由cat返回的process.sendline(&quot;abcd&quot;)# 现在重新开启echo功能，就可以再次看到我们发送的字符了process.setecho(True)
+</code></pre>
+<h3 id="215-setwinsize-控制台窗口大小">2.15 setwinsize() - 控制台窗口大小</h3>
+<p>如果子程序是一个控制台（TTY），比如 SSH 连接、 Telnet 连接这种通过网络登陆到系统并发送命令的都算控制台，那么可以用这个方法来设置这个控制太的大小（或者说长宽）。<br>
+它的调用方式是 <code>process.setwinsize(r, c)</code><br>
+默认值是 <code>setwinsize(24, 80)</code>，其中 24 是高度，单位是行； 80 是宽度，单位是字符。<br>
+为什么要用它？想像下面的场景：<br>
+有的时候你通过pexpect登陆到某个ssh控制台之后，又用 interact() 来将控制权交给用户，然后用户到控制台里面写自己的命令，如果命令比较长，就会发现当命令到屏幕边缘之后不会自动换行，而是又返回到这一行的最前面重新覆盖前面的字符；这不会影响命令的实际效果，但是很恼人。<br>
+这种情况用 setwinsize() 就可以解决，找到自己终端支持的长度，重新设置一下，比如 setwinsize(25, 96 )，如果设置的正确的话就可以解决了。</p>
+<h3 id="216-wait-执行等待">2.16 wait() - 执行等待</h3>
+<p>直到被调用的子程序执行完毕之前，程序都停止（或者说等待）执行。它不会从被调用的子程序中读取任何内容。</p>
+<h3 id="217-waitnoecho">2.17 waitnoecho()</h3>
+<p>它使用的地方比较特殊，唯一匹配的地方就是：当子程序的 echo 功能被设置为 Fals 时。<br>
+看起来很奇怪？其实这个功能是基于一个很让人难以置信但的确是真实的情况：<br>
+在命令行模式下，很多要求输入密码的地方，比如 FTP/SSH 等，密码实际上都会在你输入之后又重新返回并打印出来的，但是为什么我们看不到我们自己输入的密码呢？这就是因为密码在要打印出来之前被程序将 echo 功能设置为 False 了。<br>
+现在知道为什么有这么一个方法了吧？比如要进行一个 ssh 连接时，如何检查是否要输入密码？用关键字 password 是一个方法，但还有一个方法就是这样：</p>
+<pre><code class="language-python"># 启动ssh连接
+process = pexpect.spawn(&quot;ssh user@example.com&quot;)
+# 等待echo被设置为False，这就意味着本地不会有回显
+process.waitnoecho()
+process.sendline('mypassword')
+</code></pre>
+<p>可以设置超时时间，默认是：<code>waitnoecho(timeout=-1)</code>，表示和系统设置的超时时间相同，也可以设置为 None 表示永远等待，直到回显被设置为 False ，当然还可以设置其他的数字来表示超时时间。</p>
+<h3 id="218-write-发送字符串">2.18  write() - 发送字符串</h3>
+<p>类似于send()命令，只不过不会返回发送的字符数。</p>
+<h3 id="219-writelines-发送包含字符串的列表">2.19 writelines() - 发送包含字符串的列表</h3>
+<p>类似于 write() 命令，只不过接受的是一个字符串列表， writelines() 会向子程序一条一条的发送列表中的元素，但是不会自动在每个元素的最后加上回车换行符。<br>
+与 write() 相似的是，这个方法也不会返回发送的字符数量。</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>句柄则是由系统所管理的引用标识，该标识可以被系统重新定位到一个内存地址上。这种间接访问对象的模式增强了系统对引用对象的控制。（参见封装）。通俗的说就是我们调用句柄就是调用句柄所提供的服务，即句柄已经把它能做的操作都设定好了，我们只能在句柄所提供的操作范围内进行操作，但是普通指针的操作却多种多样，不受限制。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  <p style="text-align: left; color: brown;">
+    生而为人，应该能够换尿布、策划入侵、杀猪、开船、造房子、
+    写十四行诗、算账、建墙、正骨、抚慰临终之人、接受命令、
+    下达命令、合作、独行、解决方程式、分析新问题、
+    清理马粪、编程、烹饪美食、高效战斗、英勇牺牲。
+    专业分工是给昆虫准备的。
+</p>
+    <br>
+    <br>
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+
+    <br>
+    <p>...</p>
+    <br>
+    <center> <img
+            src="https://img.shields.io/badge/dynamic/json?color=da282a&label=%E5%B0%91%E6%95%B0%E6%B4%BE%E5%85%B3%E6%B3%A8&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dsspai%26queryKey%3Dhwang" />
+    </center>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#1-pexpect-%E6%98%AF%E4%BB%80%E4%B9%88">1. Pexpect  是什么</a></li>
+<li><a href="#2-%E7%94%A8%E6%B3%95">2. 用法</a>
+<ul>
+<li><a href="#21-spawn">2.1 spawn()</a>
+<ul>
+<li><a href="#%E5%8F%82%E6%95%B0">参数</a></li>
+</ul>
+</li>
+<li><a href="#22-expect">2.2 expect()</a></li>
+<li><a href="#221-expect_exact">2.2.1 expect_exact()</a></li>
+<li><a href="#222expect_list">2.2.2expect_list()</a></li>
+<li><a href="#223-expect_loop">2.2.3 expect_loop()</a></li>
+<li><a href="#23-send">2.3 send()</a></li>
+<li><a href="#231-sendline">2.3.1 sendline()</a></li>
+<li><a href="#232-sendcontrol">2.3.2 sendcontrol()</a></li>
+<li><a href="#233-sendeof">2.3.3 sendeof()</a></li>
+<li><a href="#234-sendintr">2.3.4 sendintr()</a></li>
+<li><a href="#24-interact-%E5%B0%86%E6%8E%A7%E5%88%B6%E6%9D%83%E4%BA%A4%E7%BB%99%E7%94%A8%E6%88%B7">2.4 interact() - 将控制权交给用户</a></li>
+<li><a href="#25-close">2.5 close()</a></li>
+<li><a href="#26-terminate">2.6 terminate()</a></li>
+<li><a href="#27-kill">2.7 Kill()</a></li>
+<li><a href="#28-flush">2.8 flush()</a></li>
+<li><a href="#29-isalive">2.9 isalive()</a></li>
+<li><a href="#210-isatty">2.10 isatty()</a></li>
+<li><a href="#211-next">2.11 next()</a></li>
+<li><a href="#212-read">2.12 read()</a></li>
+<li><a href="#213-readlines-%E8%BF%94%E5%9B%9E%E5%88%97%E8%A1%A8%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%89%80%E6%9C%89%E8%BE%93%E5%87%BA">2.13 readlines() - 返回列表模式的所有输出</a></li>
+<li><a href="#214-setecho-%E5%AD%90%E7%A8%8B%E5%BA%8F%E5%93%8D%E5%BA%94%E6%A8%A1%E5%BC%8F">2.14 setecho() - 子程序响应模式</a></li>
+<li><a href="#215-setwinsize-%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F">2.15 setwinsize() - 控制台窗口大小</a></li>
+<li><a href="#216-wait-%E6%89%A7%E8%A1%8C%E7%AD%89%E5%BE%85">2.16 wait() - 执行等待</a></li>
+<li><a href="#217-waitnoecho">2.17 waitnoecho()</a></li>
+<li><a href="#218-write-%E5%8F%91%E9%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2">2.18  write() - 发送字符串</a></li>
+<li><a href="#219-writelines-%E5%8F%91%E9%80%81%E5%8C%85%E5%90%AB%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%97%E8%A1%A8">2.19 writelines() - 发送包含字符串的列表</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://hwang.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://hwang.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'dTgTog99vAEi8ws6LDdFg4iI-gzGzoHsz',
+    appKey: 'CnvncVESy4G5mVQRxk1G9Uef',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '来都来了，不妨评论一下',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

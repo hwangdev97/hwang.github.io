@@ -1,0 +1,564 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Hwang&#39;s Blog</title>
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://hwang.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Hwang&#39;s Blog - Atom Feed" href="https://hwang.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159350557-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-159350557-1');
+  </script>
+    
+
+  <meta name="description" content="欢迎来到 Hwang 的小博客 <br>
+📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；<br>
+🌍 托管于 Github，感谢 Github.com 提供的服务器资源  <br>
+✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝<br>
+👨‍🎨 封面由 Hwang，在 Figma 上完成创作 <br>
+这里显然不是什么技术博客，也不会有太多值得期待的干货。" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
+    
+      <a href="https://hwang.top/tag/CjydnGrXlu/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        也许还行
+      </a>
+    
+      <a href="https://growing.zhubai.love" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        竹白
+      </a>
+    
+      <a href="http://newsletter.hwang.top" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        Newsletter
+      </a>
+    
+    <a href="https://hwang.top/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
+</div>
+
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        阅读清单
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwangs-read-list-ep-20/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 20
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-03-27</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+这是不定期更新的个人阅读目录，在我的输入流程中，文章从RSS以及其他不同平台获取，这里存放那些我好好看了的文章。
+
+The business of influence with MKBHD
+
+Nilay Patel talks with ...
+      </div>
+      <a href="https://hwang.top/post/hwangs-read-list-ep-20/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 20">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwangs-read-list-ep-19/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 19
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-03-17</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+这是不定期更新的个人阅读目录，在我的输入流程中，文章从RSS以及其他不同平台获取，这里存放那些我好好看了的文章。
+
+独家对话浑水创始人：调查欢聚持续一年，接下来百度有两个选择 | 棱镜
+
+十年前我们去调查中国公司，可能就是数一数卡车的数量...
+      </div>
+      <a href="https://hwang.top/post/hwangs-read-list-ep-19/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 19">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwangs-read-list-ep/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP18
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-02-01</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>这是不定期更新的个人阅读目录，在我的输入流程中，文章从RSS以及其他不同平台获取，这里存放那些我好好看了的文章。<br>
+ps. 现在链接都是正常的了。</p>
+</blockquote>
+
+      </div>
+      <a href="https://hwang.top/post/hwangs-read-list-ep/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP18">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwangs-read-list-ep16/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List — EP16
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-12-28</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+由于 IFTTT 收费策略变更（没办法自动化了），加之最近工作繁忙，这部分内容已经很久没有更新了。
+正在思考如何持续的整理内容。
+过去我一直是 RSS 阅读一部分，好的内容 Read It Later （无论是 Pocket 还是 Ins...
+      </div>
+      <a href="https://hwang.top/post/hwangs-read-list-ep16/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List — EP16">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-015/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 015
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-11-28</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+
+一日一技｜只要一台电脑，轻松获取米家设备 token
+
+不管你是想通过 Homebridge 还是 Home Assistant 把米家设备添加到苹果的 HomeKit...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-015/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 015">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-013 (Hwangs 的冲突副本 2020-11-13)/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 014
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-10-15</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+
+开源、可定制的网页批注工具——Hypothesis
+
+Matrix 是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选 Matri...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-013 (Hwangs 的冲突副本 2020-11-13)/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 014">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-013/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP  013
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-10-15</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+
+开源、可定制的网页批注工具——Hypothesis
+
+Matrix 是少数派的写作社区，我们主张分享真实的产品体验，有实用价值的经验与思考。我们会不定期挑选 Matri...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-013/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP  013">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-012/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 012
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-10-07</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+
+家庭 10Gbps 网络施工指南
+
+千兆网已经普及了块一二十年，其他计算设备瓶颈都在大幅改善，存储设备速度都翻了快 30 倍（HDD 普遍连续读取速度为 160MB/s...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-012/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 012">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-011/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 011
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-08-19</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        很久没更新了，也没好好弄；
+
+注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+
+Mac 视觉史 vol.1：从 Macintosh 到 Mac OS
+
+微信号 cloverfield11 功能介绍 夜晚正式开始。 200...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-011/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 011">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-010/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 010
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-05-21</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+
+这场疫情，如果西方输了怎么办？
+
+[欢迎点击此处订阅新冠病毒疫情每日中文简报，或发送邮件至cn.letters@nytimes.
+最详尽的 JS 原型与原型链终极详解，...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-010/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 010">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-09/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+           Hwang&#39;s Read List - EP 09
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-04-01</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+
+为了买一个完美的雷电 3 扩展坞，我累计花掉了一台 iPhone 11 的钱
+
+编注：本文是「少数派 2019 年度征文活动」的入围文章，本篇征文的投稿赛道为：看完就想...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-09/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt=" Hwang&#39;s Read List - EP 09">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-08/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 08
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-03-01</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+现在,以编程方式在 Electron 中上传文件,是非常简单的!
+
+这段讨论,其实本来是讨论如何自动设置 input 标签的值来实现自动选择文件的.前一段有个 Electo...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-08/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 08">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-07/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 07
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-02-11</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+
+中国企业获设计“剽窃奖”被质疑
+
+近日，一则中国制造商包揽德国“金鼻子剽窃奖”前十名的消息引发关注。中国设计是否存在山寨外国设计再次引发热议。
+
+为什么DevOps很好...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-07/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 07">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-06/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 06
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-12-29</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+注：链接是 IFTTT 生成的，可能需要科学的上网方式，才能够访问
+
+真正提高效率：自定义你的 Touch Bar
+
+自 2016 年 Touch Bar 在 MacBook Pro 上问世以来，对其最大的争议就是它并不能很好地提高用户的...
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-06/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-06.png" alt="Hwang&#39;s Read List - EP 06">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-05/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 05
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-12-22</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>最近真就没怎么更新博客...<br>
+注：链接是 <a href="ifttt.com">IFTTT</a> 生成的，可能需要科学的上网方式，才能够访问</p>
+</blockquote>
+
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-05/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-05.png" alt="Hwang&#39;s Read List - EP 05">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-reading-list-new-04/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 04
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-11-17</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h6 id="这些文章来自-hwang-的-instapaper-pocket-从-rss-微博-微信等地方看到觉得自己应该仔细看看的文章收集进-instapaper-pocket归档这些文章后才会出现这里-故而主观又缺乏时效性-很遗憾没有帮到你们">这些文章来自 Hwang 的 <s>Instapaper</s> Pocket。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 <s>Instapaper</s> Pocket，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。</h6>
+
+      </div>
+      <a href="https://hwang.top/post/hwang-reading-list-new-04/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-reading-list-new-04.png" alt="Hwang&#39;s Read List - EP 04">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-2/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 2
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-10-06</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        这些文章来自 Hwang 的 Instapaper 。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 Instapaper ，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗憾没有帮到你们。
+
+ 谐门武学：使...
+      </div>
+      <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-2/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-de-di-zhi-yue-du-dan-new-2.png" alt="Hwang&#39;s Read List - EP 2">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-1/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Hwang&#39;s Read List - EP 01
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-09-27</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        Hwang 的低质阅读单 New
+这些文章来自 Hwang 的 Instapaper 。从 RSS、微博、微信等地方看到，觉得自己应该仔细看看的文章，收集进 Instapaper ，归档这些文章后，才会出现这里。故而，主观又缺乏时效性。很遗...
+      </div>
+      <a href="https://hwang.top/post/hwang-de-di-zhi-yue-du-dan-new-1/" class="btn">
+        👀
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://hwang.top/post-images/hwang-de-di-zhi-yue-du-dan-new-1.png" alt="Hwang&#39;s Read List - EP 01">
+    
+  </div>
+  
+      </div>
+
+      
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  <p style="text-align: left; color: brown;">
+    生而为人，应该能够换尿布、策划入侵、杀猪、开船、造房子、
+    写十四行诗、算账、建墙、正骨、抚慰临终之人、接受命令、
+    下达命令、合作、独行、解决方程式、分析新问题、
+    清理马粪、编程、烹饪美食、高效战斗、英勇牺牲。
+    专业分工是给昆虫准备的。
+</p>
+    <br>
+    <br>
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+
+    <br>
+    <p>...</p>
+    <br>
+    <center> <img
+            src="https://img.shields.io/badge/dynamic/json?color=da282a&label=%E5%B0%91%E6%95%B0%E6%B4%BE%E5%85%B3%E6%B3%A8&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dsspai%26queryKey%3Dhwang" />
+    </center>
+</footer>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://hwang.top/media/scripts/main.js"></script>
+</body>
+</html>

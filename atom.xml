@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://hwang.top</id>
+    <title>Hwang&apos;s Blog</title>
+    <updated>2022-10-17T05:53:56.018Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://hwang.top"/>
+    <link rel="self" href="https://hwang.top/atom.xml"/>
+    <subtitle>欢迎来到 Hwang 的小博客 &lt;br&gt;
+📚 博客通过 Gridea 搭建，感谢 Gridea 的免费服务；&lt;br&gt;
+🌍 托管于 Github，感谢 Github.com 提供的服务器资源  &lt;br&gt;
+✏️ 文章由 Hwang，在 Ulysses 上完成写作/亦或者拷贝&lt;br&gt;
+👨‍🎨 封面由 Hwang，在 Figma 上完成创作 &lt;br&gt;
+这里显然不是什么技术博客，也不会有太多值得期待的干货。</subtitle>
+    <logo>https://hwang.top/images/avatar.png</logo>
+    <icon>https://hwang.top/favicon.ico</icon>
+    <rights>All rights reserved 2022, Hwang&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[✅ 一个小成就 ｜ App Store 编辑每周推荐 ]]></title>
+        <id>https://hwang.top/post/yi-ge-xiao-cheng-jiu-or-app-store-bian-ji-mei-zhou-tui-jian/</id>
+        <link href="https://hwang.top/post/yi-ge-xiao-cheng-jiu-or-app-store-bian-ji-mei-zhou-tui-jian/">
+        </link>
+        <updated>2022-07-01T05:49:11.000Z</updated>
+        <content type="html"><![CDATA[<p>Sleepy Coffee：喝好咖啡睡好觉</p>
+<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1665985851598.JPG" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[macOS Monterey 移除 Python2 后的一些 edge case]]></title>
+        <id>https://hwang.top/post/macos-monterey-yi-chu-python2-hou-de-yi-xie-edge-case/</id>
+        <link href="https://hwang.top/post/macos-monterey-yi-chu-python2-hou-de-yi-xie-edge-case/">
+        </link>
+        <updated>2022-04-20T06:38:00.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>macOS Monterey 移除 Python2 的 Side effects #jike
+<ul>
+<li>macOS Monterey 开始着手移除 Python2 的事情，对我们这些 Front-end 开发者来说可能会遇到 VSCode 的 「code . 」命令不生效的问题。</li>
+<li>具体可以查看这个 issue 👉 <a href="https://github.com/microsoft/vscode/issues/134635">github.com</a></li>
+<li>解决办法
+<ol>
+<li>把 <code>xxx/bin/code</code> 文件里面的 python 命令改成 python3</li>
+<li>insiders 版本已经修复了这个问题，可以先用 insiders 版本或者等正式版修复。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[4月1日特刊 —— 📒 全新效率应用：明天再做 —— ToDo]]></title>
+        <id>https://hwang.top/post/4-yue-1-ri-te-kan-quan-xin-xiao-lu-ying-yong-ming-tian-zai-zuo-todo/</id>
+        <link href="https://hwang.top/post/4-yue-1-ri-te-kan-quan-xin-xiao-lu-ying-yong-ming-tian-zai-zuo-todo/">
+        </link>
+        <updated>2022-04-01T06:42:42.000Z</updated>
+        <content type="html"><![CDATA[<p>人们总是会想，这事要是能明天再做，该多好呀。</p>
+<p>为了让大家不再愧疚于自己今日的碌碌无为，将希望寄托于明日。我为大家带来了与众不同且全新的效率应用 ToDo App 是的， ToDo， 我将其命名为 TomorrowDo， ToDo。 中文名「明天再做」。</p>
+<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1650437911619.png" alt="" loading="lazy"></figure>
+<h2 id="告别焦虑的待办事项">告别焦虑的待办事项</h2>
+<p>您可以在 ToDo  中记下明天要做的事情。是的，是明天要做的事情，明天是不会到来的，所以明天永远是明天，我们的 ToDo 不会提醒你任何待办事项的信息，告别信息焦虑从 ToDo 开始。</p>
+<figure data-type="image" tabindex="2"><img src="https://hwang.top/post-images/1650437926721.png" alt="" loading="lazy"></figure>
+<p>和一般的待办事项一样，你可以创建分组，创建任务，设定时间*（只能选明天，forever），把事情放到明天，明天再做！Just ToDo （Tomorrow do）It ！</p>
+<h2 id="与大家一起优化明日任务">与大家一起优化明日任务！</h2>
+<p>一个人将事情放在明天，难免会有「拖延」之嫌。别怕！</p>
+<p>我们为您准备了群组功能！星星之火可以燎原，大家都把事情放到明天，不仅可以群策群力的优化待办事项，还可以让大家都能有更美好的「今日」。</p>
+<p>为达到这个目标，我们设计了：</p>
+<h3 id="主题小组">主题小组</h3>
+<figure data-type="image" tabindex="3"><img src="https://hwang.top/post-images/1650437938876.png" alt="" loading="lazy"></figure>
+<p>准备考研的你会需要学长学姐们的教诲，准备减肥的你会需要会需要达人们的指教，前辈们的指导再任何时代都格外有价值，我们会根据用户数据创建一些群组，同时考虑开放用户申请创建群组的功能。</p>
+<h3 id="群策群力">群策群力</h3>
+<figure data-type="image" tabindex="4"><img src="https://hwang.top/post-images/1650437950558.png" alt="" loading="lazy"></figure>
+<p>您可以将您的列表分享到群组中。这样群组小伙伴就能对你的列表里的待办事项提出意见和建议，大家一起做 Tomorrow Review ！群组成员可以</p>
+<ol>
+<li>
+<p>标记待办事项为 「没必要做这个」</p>
+</li>
+<li>
+<p>标记待办事项为「这个无论怎么样都得下周」</p>
+</li>
+<li>
+<p>标记待办事项为 「算了吧」</p>
+</li>
+</ol>
+<p>当你的待办事项被10个群组成员标记为 「没必要做这个」时会触发 「没必要」功能。<br>
+当你的待办事项被10个群组成员标记为「这个无论怎么样都得下周」，这个待办事项的透明度将减少 0.1，并且不设下线。<br>
+当你的待办事项被10个群组成员标记为「算了吧」，什么也不会发生，但是您可以思考一下为什么。</p>
+<h3 id="没必要">没必要</h3>
+<figure data-type="image" tabindex="5"><img src="https://hwang.top/post-images/1650437978207.png" alt="" loading="lazy"></figure>
+<p>没必要功能会将待办事项移除，并且我们采用「静默移除」的方式实现该功能。在潜移默化中，您明天的待办事项就会完成！这是ToDo的一小步，确是人类的战胜明天的一大步！</p>
+<p>是的，触发「没必要」后，这个事项就会消失。并且群组其他成员也不能创建类似待办项目。不是你一个「没必要」做这件事，是大家都「没必要」，这才是真真正正的「没必要」。</p>
+<h2 id="互相监督格外亲密">互相监督，格外亲密</h2>
+<figure data-type="image" tabindex="6"><img src="https://hwang.top/post-images/1650437994952.png" alt="" loading="lazy"></figure>
+<p>除了群组功能外，好友也非常重要。</p>
+<p>我们为 ToDo 设计开发了好友功能，相信我们，这是最强大的效率类好友功能之一（避免广告法）了！</p>
+<p>添加好友后，对方并不能查看你的待办事项（即便是亲密到穿同一条内裤的兄弟，基本的隐私还是要有的）。当好友完成一件「明天」的待办事项时，您将收到一条监督通知。</p>
+<p>「有人在内卷！」</p>
+<p>这时您可以点击通知，我们会调用 API 将一些垃圾话存储到你的剪贴板中，并且通过 URL Scheme 唤起微信，找到那个人（他不能说是好友了），粘贴垃圾话，再按下回车，相信不用几次， 你和他就不会在有联系了。</p>
+<p>我们还设计了「监督小能手」的排名，希望您能在竞赛中取得好成绩。</p>
+<figure data-type="image" tabindex="7"><img src="https://hwang.top/post-images/1650438052411.gif" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="8"><img src="https://hwang.top/post-images/1650438059227.gif" alt="" loading="lazy"></figure>
+<h2 id="何时能下载">何时能下载</h2>
+<p>相信这么好用的软件，大家都已经迫不及待的想要下载了，那么什么时候能用上呢？<br>
+答案显而易见 —— 明天。</p>
+<figure data-type="image" tabindex="9"><img src="https://hwang.top/post-images/1650438006221.png" alt="" loading="lazy"></figure>
+<p>Ps. 如果您有任何关于 ToDo 的意见或者建议，相信不用我多说，明天会做的。</p>
+<blockquote>
+<p>恣意生长是一份自我观察的 Newsletter。如果不输出，那么输入会显得不那么有意义，自大地以为自己“无所不知”。所以做一份 Newsletter 似乎会是一个审视自己的好机会。这份 Newsletter 会为读者提供个人的关于视角/产品/设计/编程 四个方向内容的思考和感悟，他们会是杂糅而又恣意的。</p>
+</blockquote>
+<p>感谢阅读，欢迎回信，敬颂时祺。<br>
+Hwang  📝 4月1日 📍 杭州 5/100</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[#04 ｜ 恣意生长  by Hwang]]></title>
+        <id>https://hwang.top/post/04-or-zi-yi-sheng-chang-by-hwang/</id>
+        <link href="https://hwang.top/post/04-or-zi-yi-sheng-chang-by-hwang/">
+        </link>
+        <updated>2022-03-22T09:44:35.000Z</updated>
+        <content type="html"><![CDATA[<p>Hi，好久不见。本期间隔时间稍微长了一些呀，因为最近都比较忙，工作也比较忙，自己的小项目也遇到了些困难。不过好在方向都是好的，做自己愿意做的事情，总是快乐的。</p>
+<p>这段时间我听了几期感觉还不错的播客，推荐给大家：</p>
+<ul>
+<li>[中美 SaaS 对比：差距与潜力]
+<ul>
+<li>节目聊了国内国外 SaaS 的差异，可以明显感受到各位投资人对国内 SaaS 其实并没有那么大的信心。[最近 Figma 的事件]，看起来利好国内 SaaS 但我觉得对于整个  SaaS 服务而言可能还是伤害更多，国内的老板们可能更加不信任 SaaS 了。</li>
+</ul>
+</li>
+<li>[ E24｜奈飞产品总监：我眼中的“自由与责任” ]
+<ul>
+<li>奈飞的企业文化<strong>如此开放</strong>。相信我们也会有越多的自我实现需求大于经济利益的需求优秀的人，希望接下来国内的90、95后创业者们也能构建起这样的优秀团队。</li>
+</ul>
+</li>
+<li>[ 远程办公，是现代企业的终局吗？从携程3+2混合办公展开 ]
+<ul>
+<li>我对携程的印象主要还是他们老板是经济学家。3+2 的办公模式可能也是个极大的社会实验吧。小团队实行这样的工作模式，能够获得一致或者更高的办公效率并不奇怪，不过如果是一个较大的组织能够落地这样的政策还是很令人钦佩的。</li>
+</ul>
+</li>
+<li>[ #92. 拉丁美洲旅游2——秘鲁、古巴、巴西、巴拿马 ]
+<ul>
+<li>好想出去玩...</li>
+</ul>
+</li>
+</ul>
+<p>说起来，大家最早是什么时候开始听播客节目的？我印象中自己听播客的顺序大概是《科学脱口秀》、《友的聊》再到 李如一老师  及 [IPN] 的节目。</p>
+<h2 id="产品-聊聊微软-与-linux">产品 —— 聊聊微软 与 Linux</h2>
+<p>macOS 因为命令行友好，Unix 环境，以及相当不错的 GUI 体验而被广大开发者推崇。反观 Windows，无论是 CMD 还是 PowerShell 对于开发者来说都算不上优秀。不过随着 WSL （Windows Subsystem for Linux ）的推出，微软通过子系统的方式，为 Windows 开发者带来了完整的 Linux 的体验。</p>
+<p>Windows Subsystem for Linux 是一个非常有趣的产品。对于开发者而言，通过 WSL，可以很方面的调用 Linux 上的各种命令，无需在额外安装 [Cygwin] 之类的为 Windows 提供类 Linux 环境的软件，抑或维护单独的虚拟机环境。只需开启 WSL 功能，再选择自己喜欢的发行版本即可。</p>
+<p>在 2001 年，[时任微软 CEO 的鲍尔默称 Linux 是癌症]。那时的微软主要业务是 Windows 和 Office，这些商业软件与免费的开源软件是直接的竞争对手。</p>
+<p>在微软现任 CEO 纳德拉上台后，「云为先」的战略指导下，微软逐渐转型为云计算公司，Azure 的 CTO [Mark Russinovich] 曾表示，Azure上运行的虚拟机有四分之一是 Linux 操作系统，在云计算这个领域，开源和 Linux  几乎是唯一选择。时间拨回到2015年，微软将自家的 .NET Core 带进 Linux 家庭，[纳德拉喊了那句 「Microsoft loves Linux.」，并且之后微软真的发布了自己的 Linux 发行版。]</p>
+<p>从2001年到2015年，微软将 Linux 称为小偷转变为公开示爱，这中间是移动互联高速发展的十年，也是微软迷失在移动浪潮的十年。 Windows CE 到 Windows Mobile，再到 WIndows Phone，微软在用互联网几乎没有胜战。而这十年， Google 却凭借基于 Linux 的 Android 系统成为了与 iOS 分庭抗礼的操作系统。免费开源，占领市场的行为从 Linux 之于云服务到 Android  之于移动互联网都得到验证，很难说这些事实没有启发到微软。得益于 Windows Subsystem 的支持，最新推出的 Windows 11 也能够支持 Linux 的<em>特别版本</em> — Android 软件在其中运行。</p>
+<h2 id="设计-人物-edward-hopper-爱德华霍普">设计 - 人物： Edward Hopper 爱德华·霍普</h2>
+<p>(img)<br>
+本期设计想聊聊这位艺术家，Hopper 最著名的画作当属于 1942年 创作的《夜游者》，最近上映的[《新蝙蝠侠》]这最后找到谜语人的一幕，在构图上就能明显感觉到致敬这幅名作。<br>
+(img)<br>
+“最切中要害的辛酸，不停重演的美国孤独感的浪漫形象。”</p>
+<p>《夜游者》油画作于1942年，这一年日本偷袭珍珠港，美国向日本宣战。城市中的人们所能感受到的就像画中被夜晚放大的情绪 —— 不安与不确定。繁华的都市生活似乎就在身边，街道与室内的灯光的强烈对比，画中人眼神都自顾自的看着各处，没有喧闹没有嘈杂有的只是能够感同身受的不安。</p>
+<p>Hopper 的画作以描绘寂寥的美国当代生活风景闻名，建筑、人与光影是 Hopper 绘画的重要主题。就像中国的写意山水一样，Hopper 的画作强在构建一种「氛围」，这种氛围是能够让人沉浸其中。</p>
+<p>一些关于 Hopper 的事实：</p>
+<ul>
+<li>Hopper 年轻时，受到了严格的[浸信会（ Baptist ）]的教义熏陶。</li>
+<li>曾经 Hopper 希望成为一名造船师，不过在父母鼓励下从事了艺术行业。</li>
+<li>在完成早年教育后，他曾经前往欧洲三次，主要研究欧洲新兴的画风，但他舍弃了当时立体主义画派的抽象潮流，走向写实画派中的理想主义（idealism）。</li>
+<li>Hopper 的画作常常绘制建筑，并且喜欢绘制建筑侧面的阳光。</li>
+<li>Hopper 稀疏寂寥的绘画风格还影响了希区柯克的电影创作。</li>
+<li>纽约佳士得2018年11月拍卖，Hopper 的《中餐厅（杂碎）》以9593.75万美元成交，折合人民币以6.672亿元成交。</li>
+<li>Hopper 在四十一岁时与妻子结婚，婚后在新英格兰乡下和海边，夫妻俩几乎过着隐士般的生活。</li>
+</ul>
+<p><strong>更多关于 Hopper 的信息：</strong></p>
+<ul>
+<li>[ 'We are all Edward Hopper paintings now': is he the artist of the coronavirus age?]</li>
+<li>[夜游者 | 爱德华·霍普]</li>
+<li>[Edward Hopper]</li>
+</ul>
+<h2 id="编程-用-github-action-做-flutter-项目都-cicd自动发布到-testflight-上">编程 - 用 GitHub Action 做  Flutter 项目都 CI/CD，自动发布到 TestFlight 上</h2>
+<p>之前团队的 [CI/CD] 都是在 GitLab 上跑的，最近因为种种方面考虑，我们把主要的代码仓库迁移到了 GitHub 上，自然的 CI/CD 也是要做迁移的。前后端部分，因为都是 Typescript 大家都比较熟练，没有遇到什么问题。这里可以展开介绍一下 Flutter 部分的。</p>
+<p>CI/CD 就是通过命令行工具，完成项目的构建的自动化流水线。在这里我们会用到的命令行工具主要是：</p>
+<ul>
+<li>[flutter]： flutter官方的命令行工具</li>
+<li>[xcodebuild]： Xcode 的命令行工具</li>
+<li>[altool]：苹果官方的上传工具</li>
+</ul>
+<p>如果对上述工具不熟悉，可以参考给出的链接文档。</p>
+<p>GitHub Action 提供了 Ubuntu、macOS、Windows 等系统的虚拟机运行环境，最需要在 <code>runs-on</code> 中注明即可，在费用上，GitHub 保持一贯的大度，开源项目是免费构建，私有仓库提供 2000 分钟的免费时长，超出部分将收费。收费标准根据不同类型的虚拟机[收费不同]，其中，macOS 是 ubuntu 的 10 倍收费…</p>
+<p>在这个流程实现上，主要参考是：</p>
+<ul>
+<li>[ How to build and sign your Flutter iOS application using GitHub Actions ]</li>
+</ul>
+<p>并没有通过 Fastlane、Jenkins 之类的第三方 CI\CD 工具。所有过程都只需要 GitHub Action 即可完成。</p>
+<ul>
+<li>
+<p>具体代码部分可以参考这个项目：👉 [https://github.com/damienaicheh/demo_flutter_github_actions]</p>
+</li>
+<li>
+<p>当然也可以参考我的项目：👉[https://github.com/hwangdev97/flutter-github-action-build-to-testflight]</p>
+</li>
+</ul>
+<p>其中，相对而言比较复杂的其实是证书相关的知识。其中包括：</p>
+<ul>
+<li><code>.P12</code> 证书：从 keychain （钥匙串）中导出的文件</li>
+<li><code>provisoning_profile</code>，从 Apple Develop 后台到处的文件</li>
+<li>以及 <code>APPSTORE_API_KEY_ID</code>、<code>APPSTORE_API_PRIVATE_KEY</code>、<code>APPSTORE_ISSUER_ID</code></li>
+</ul>
+<p>除了证书文件，这里还有一件事就是<strong>自动升级构建版本</strong>。</p>
+<p>同样可以参考：[Manage your mobile application version automatically with GitHub Actions]</p>
+<p>使用 <code> extract-version-from-tag-action</code> 这个的Action，既可以在 git tags 中获得<code>MAJOR \ MINOR \ PATCH</code> 等变量，以及 <code>NUMBER_OF_COMMITS</code> ( commits 的次数）<code>NUMBER_OF_COMMITS_SINCE_TAG</code> （上一个 tag 到目前的次数）这几个变量信息，就可以用于设定版本提升了。<em>（该项目代码里我们采用了修改 <code>info.plist</code> 的方案，而非直接读取 flutter 的版本号，这里大家可以自行斟酌）</em></p>
+<p>最后，发送到 TestFlight 之后，还会发送一条通知消息到飞书。</p>
+<p>题外话，最近一直在招聘 Flutter 开发，明显感觉原生开发很多都开始往跨平台方向转，并且新人很少，反之前端开发还是挺多的。</p>
+<h2 id="最近读了啥">最近读了啥</h2>
+<h3 id="design">Design</h3>
+<ul>
+<li>[building a modern home - Johnny Rodgers]</li>
+<li>[Spline 进行了大更新]，更有3D版 Figma 那味儿了，并且发布了 React 的组件，不得不说，[从这个 Demo 看]效果还是有些惊艳的。</li>
+<li>Figma 搞了件大事，[不过 Master GO 和 即时设计 的种种行为看的我稍微有些尴尬。]</li>
+<li>[ 聊聊 UI 设计中的潜台词]</li>
+</ul>
+<h3 id="develop">Develop</h3>
+<ul>
+<li>[一把梭：REST API 全用 POST]</li>
+<li>[ How to import Swagger APIs into Postman? ]</li>
+<li>一套简单的 [uiui.dev] 按钮、handlines 的样式。</li>
+<li>[🔗 Git Large File Storage (LFS)]：Git 的大文件存储。</li>
+<li>如果在学习 React，也许看看这个会有帮助：[UseHooks]。</li>
+<li>[Show a browser picker for date, time, color, and files]：Chrome 的 showPicker() 事件，调用日期选择。</li>
+<li>[Flutter 2.10 稳定支持 Windows]</li>
+<li>[原来 ARM 中国叫 安谋科技]</li>
+<li>[钉钉 的 URL Scheme]</li>
+<li>[TypeScript 如何从数组元素的值中定义 Union Type - 海岛心hey]</li>
+<li>[8 万变 80 万 - V2EX] 二月在 v2ex 上很火的贴子，相信大家都有看到过，对别人的人生指指点点显然不符合我的观点，看还是挺好的。</li>
+<li>[Figma for Developers]：开发人员都看看这个吧！尤其是 frontend。</li>
+<li>[Making pixel-art with pure CSS]</li>
+<li>[React for Vue Developers - Part 1]</li>
+<li>[How to Use Correctly 'self' Keyword in Swift]</li>
+</ul>
+<h3 id="others">Others</h3>
+<ul>
+<li>[政治性emo了，怎么办？]</li>
+<li>[巧用分类法解决使用卡片笔记时遇到的困境 - 少数派]</li>
+<li>[building a modern home]，加拿大的朋友让我别做梦了，人家不一样🌚。</li>
+<li>[The Fall of Roam]
+<ul>
+<li>题外话：笔记应用对每一位使用者而言都非常重要，选择一个靠谱团队开发产品非常重要。即便是 Logseq 和 Obsidian 这种纯文本软件，相互之间迁移也非完全没有成本。</li>
+<li>另外用纯文本做笔记软件的，还请做好安全的备份…</li>
+</ul>
+</li>
+<li>[为什么我讨厌「粉粉嫩嫩」的经期记录应用]</li>
+<li>[400万社区工作者是如何被“逼”疯的？| 新世界]</li>
+</ul>
+<p><a href="https://growing.zhubai.love">通过竹白查看 🔗</a><br>
+<a href="https://www.getrevue.co/profile/Hwang/">通过 revue 查看🔗</a></p>
+<p><a href="https://hwang.top">Hwang</a> 📝 12月18日 📍 杭州</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[剪掉了长发 ]]></title>
+        <id>https://hwang.top/post/jian-diao-chang-fa/</id>
+        <link href="https://hwang.top/post/jian-diao-chang-fa/">
+        </link>
+        <updated>2022-02-26T01:53:17.000Z</updated>
+        <content type="html"><![CDATA[<p>剪掉了小啾啾造型的长头发。<br>
+疫情开始的时候留的头发，之后一直维持在这个长度，平时就是剪掉两边，扎个小jiu jiu。</p>
+<p>留着长头发有很多感受，其中最重要的&quot;女孩子真不容易&quot;。</p>
+<p>一些男孩可能不知道的事实</p>
+<ul>
+<li>洗头很麻烦，费洗发液</li>
+<li>长头发洗头干的很慢</li>
+<li>扎辫子扎久/扎太紧了头皮会痛</li>
+<li>扎辫子坐在车上，头发会先靠到靠枕...*(体验极差)</li>
+<li>包里面要备额外的皮筋</li>
+<li>一次性皮筋卖的很便宜，10块钱能用很久</li>
+<li>吃东西会吃到自己头发</li>
+<li>头发披下来碰到鼻子会打喷嚏（可能只有我）</li>
+<li>...</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://hwang.top/post-images/1648100148087.JPG" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[#03 ｜ 恣意生长 by Hwang]]></title>
+        <id>https://hwang.top/post/03-or-zi-yi-sheng-chang-by-hwang/</id>
+        <link href="https://hwang.top/post/03-or-zi-yi-sheng-chang-by-hwang/">
+        </link>
+        <updated>2022-02-08T05:34:07.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>恣意生长是一份自我观察的 Newsletter。如果不输出，那么输入会显得不那么有意义，自大地以为自己“无所不知”。所以做一份 Newsletter 似乎会是一个审视自己的好机会。这份 Newsletter 会为读者提供个人的关于视角/产品/设计/编程 四个方向内容的思考和感悟，他们会是杂糅而又恣意的。</p>
+</blockquote>
+<h2 id="引言">引言</h2>
+<p>Hello，农历新年前的第三期内容奉上。</p>
+<p>很开心TualatriX 图拉鼎 推荐了我这个仅仅更新了 2 期的 Newsletter，希望本期内容不会让大家失望。开始之前，我想先简单介绍一下对自己的 Newsletter 的想法，开始写这份 Newsletter 的目的是为了让自己日常碎片化的摄入能够有所产出，积累和沉淀自己，所以本身并没有太多刻意给自己定想要达到的目标（指订阅数之类），公开发布出来也是为了更好的激励自己，让自己能够坚持✊。不过，如果能够收获一些读者，实在是意外之喜。</p>
+<p>这是一份更新不怎么频繁的邮件通讯，意味着收到这份邮件，时间可能已经过去一个月了（时间过得真是快呀）。因为工作原因，我并不会很频繁的更新我的 Newsletter，我希望能够至少做到 100 期。按目前的更新节奏，这可能是一个需要10年时间才能完成的超长目标。 一直以来我都觉得创造的过程都是伴随痛苦，我并不讨厌这份痛苦，不过即便再包含热情，也还是会因为担心自己的输出满足不了大家的期待而惴惴不安。</p>
+<p>这是一份比较混杂的偏向互联网行业内容的邮件通讯。 因为是在一个较小的创业团队，每个人做的事情都比较杂，所以我摄入的内容也会比较多。所以这份邮件覆盖的内容会比较多，从我们的角度出发，这或许比较适合和我们一样想做小而美产品的人，或者是需要横向扩展知识面的人。作为开发者，你可以看看设计的趋势、内容，作为产品，你可以看看开发的一些细节，设计的一些理念，同样的作为设计师，你也可以了解一些产品和研发的事情。</p>
+<p>混杂的内容意味着很多时候，我输出的内容要么太浅，要么太深。做任何一件事情，要做好都不容易。我并没有在产品/设计/编程的领域都齐头并进的做的那么好，也很难做到面面俱到的优秀。所以在面上的内容输出上，很多时候是会偏浅的。不过在实际工作中是需要切实的解决很多问题的，而这些问题很多时候是会偏尖深和专业的。这几方面的原因，就会造成这样参差的内容结果（我觉得这是这个 Newsletter 的特色了）。所以如果遇到自己习以为常的东西或者看不懂的东西，大家大可以带着看个热闹的心态。</p>
+<p>内容庞杂，意味着出现错误在所难免，希望大家批评指正。 每一期内容都比较多，相关信息我都会尽量核验。不过即便如此，犯错也再所难免。如果出现错误，欢迎大家回信指正。邮件并不能更新内容，但是网页存档我会时常更新维护。</p>
+<p>最后，我一直相信：</p>
+<blockquote>
+<p>生而为人，应该能够换尿布、策划入侵、杀猪、开船、造房子、 写十四行诗、算账、建墙、正骨、抚慰临终之人、接受命令、 下达命令、合作、独行、解决方程式、分析新问题、 清理马粪、编程、烹饪美食、高效战斗、英勇牺牲。</p>
+</blockquote>
+<p>成为专业人士在职业发展上似乎是一条符合时代的选择，但是我认为多体验多感受才能获得更好的人生体验，那些在不经意间习得知识或是技能会更加丰沛自己，让自己不至于成为无聊的 Nerd 。如果能做好两件事，就不要只做一件事（另外，如果只能做好一件事，那把一件事做好即可）。</p>
+<p>Ps. 就在写这个文章的时候，读到了「<a href="https://geekplux.zhubai.love/posts/2097303049985957888">如何在某一领域成为世界顶尖 -#5</a>」，成为专家，因为边际效益递减，并非完全是完全经济的决策😆。</p>
+<hr>
+<p>内容目录</p>
+<p>视角 —— 交易费用<br>
+产品 —— 我在用 Obsidian 整理记录 / OdysseyDAO 的 Web3 教程<br>
+设计 —— 为设计师介绍一下 Storybook<br>
+编程 —— 浏览器 Server-Sent Events / CSS clip-path 绘制一个 200万的曲线</p>
+<hr>
+<p><a href="https://growing.zhubai.love/posts/2083896629626634240">通过竹白查看 🔗</a><br>
+<a href="https://www.getrevue.co/profile/Hwang/">通过 revue 查看🔗</a></p>
+<p><a href="https://hwang.top">Hwang</a> 📝 12月18日 📍 杭州</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[#02 ｜ 恣意生长  by Hwang]]></title>
+        <id>https://hwang.top/post/02-or-zi-yi-sheng-chang-by-hwang/</id>
+        <link href="https://hwang.top/post/02-or-zi-yi-sheng-chang-by-hwang/">
+        </link>
+        <updated>2021-12-19T04:19:47.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>恣意生长是一份自我观察的 Newsletter。如果不输出，那么输入会显得不那么有意义，自大地以为自己“无所不知”。所以做一份 Newsletter 似乎会是一个审视自己的好机会。这份 Newsletter 会为读者提供个人的关于视角/产品/设计/编程 四个方向内容的思考和感悟，他们会是杂糅而又恣意的。</p>
+</blockquote>
+<h2 id="视角-工具是长久的生意">视角 —— 工具是长久的生意</h2>
+<p>最近一直和几位老板在聊新产品的事情。其中一位老板，80后，本科浙江大学的，这些年一直在温州经营生意，非常优秀的生意人，几次聊下来感觉思路很清晰，有「温州商人那股劲儿」。之前他在北京买过房，和俄罗斯做过生意，也和非洲做过生意，业务跨度也很大，从农贸到硬件设备都有经历过。这两年他这边主要业务遇到了一些不大不小瓶颈，过往渠道的伙伴们，因为这些年硬件生意越来越难做了，都在思考着转行做软件业务，所以也促使我们这边接触了起来。</p>
+<hr>
+<p>本期内容：</p>
+<ul>
+<li>视角 —— 工具是长久的生意
+<ul>
+<li>像咨询一样做</li>
+<li>管理好渠道</li>
+<li>深耕行业</li>
+</ul>
+</li>
+<li>产品 —— B 端教父 Salesforce 的履历</li>
+<li>设计 ——聊聊 Figma 中体现的一些编程理念
+<ul>
+<li>设计领域的开源</li>
+<li>AutoLayout 与 前端Flex 布局</li>
+<li>组件化</li>
+</ul>
+</li>
+<li>编程 —— SwiftUI 的 TCA 模式
+<ul>
+<li>一些概念</li>
+<li>学习资料</li>
+</ul>
+</li>
+<li>最近读了啥 —— 随便看看</li>
+</ul>
+<hr>
+<p>完整内容，可以订阅 Newsletter 哦</p>
+<p><a href="https://growing.zhubai.love/posts/2083896629626634240">通过竹白查看 🔗</a><br>
+<a href="https://www.getrevue.co/profile/Hwang/">通过 revue 查看🔗</a></p>
+<p><a href="https://hwang.top">Hwang</a> 📝 12月18日 📍 杭州</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[#01  ｜ 恣意生长  by Hwang]]></title>
+        <id>https://hwang.top/post/01-or-zi-yi-sheng-chang-by-hwang/</id>
+        <link href="https://hwang.top/post/01-or-zi-yi-sheng-chang-by-hwang/">
+        </link>
+        <updated>2021-11-16T02:58:57.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>恣意生长是一份自我观察的 Newsletter。如果不输出，那么输入会显得不那么有意义，自大的以为自己“无所不知”。所以做一份 Newsletter 似乎会是一个审视自己的好机会。这份 Newsletter 会为读者提供个人的关于视角/产品/设计/编程 四个方向内容的思考和感悟，他们会是杂糅而又恣意的。</p>
+</blockquote>
+<h2 id="引言">引言</h2>
+<p>如果不输出，那么输入会显得不那么有意义，自大的以为自己“无所不知”。所以做一份 Newsletter 似乎会是一个审视自己的好机会。基本上毕业后参与创业、带团队，很多<strong>硬技能</strong>（JavaScript、Python、Swift、Figma）和<strong>软技能</strong>（编程思想、团队管理、审美理念）都需要自己观察学习，很多时候这种学习和观察都是低效的。为了巩固相关技能，我决定有目的的整理这些内容，做一些简单的输出，如果能够启发到各位或者获得各位的指导，那就再好不过。相比专事专议的内容，恣意生长可能更加「杂糅」，我会聊到产品、设计和编程本身的内容，在聊产品时可能会有一些编程角度的思考，在聊设计时可能会有一些产品角度的思考… 所以我的输出可能就是“低质”的。不过 Don't panic ！ 记录自己的思考本身就是一件有意义的事情。</p>
+<h2 id="视角-tob-中-信息化和数字化-使用者和决策者分离">视角 —— toB 中 信息化和数字化、 使用者和决策者分离</h2>
+<p>第一期 Newsletter，我想聊一下这两年作为非典型的国内 B 端产品经理的观察——使用者和决策者分离。这是国内 toB 的工具类产品的一个非常非常重要的特点。</p>
+<p>我之前开玩笑说：<strong>数字化就是 Javascript，信息化（过去才这么提）就是 C/C++</strong>，其实这就是我理解的时代背景。这里首先明确一下我想表达的含义：</p>
+<p><strong>信息化与C/C++</strong>： 过去无论是政府部门还是国内的中大型企业，都经历过所谓的信息化，计算机广泛使用，办公软件、ERP系统等等，都是这个时间区间的产物。然而，这个时间区间内，互联网工具只是在很有限的空间「浸入」到了日常工作中，例如 Word、PPT 这些工具范式在国内的广泛使用就是这个时代的工具产品。而「信息化」时代所伴随的就是 C/C++ 所提供本地的软件服务。</p>
+<p><strong>数字化与JavaScript</strong>：近年来，主流语境中越来越多的用到「数字化」的概念，在我看来，这是一件事情：都是在利用编程手段，提高商业/政府系统的运行效率。伴随着「数字化」，我们看到更多的 B 端用户，开始选择使用诸如钉钉、企业微信、飞书这样的产品和服务，大型组织还会开发定制化的数据中台产品，以期「大数据的赋能」。**而这其中与「信息化」很大的不同之处在于，编程手段已经深刻影响到了其中的业务系统，越来越多的人工作是在「业务系统」下进行的，可以说几乎整个业务流程都已经浸润在「数字化」系统之下。**如果说「信息化」是编程技术的「小荷才露尖尖角」，那么「数字化」则是如水银泻地般将机构包裹住了。  与「信息化」相对应的，「数字化」时代，所伴随的技术就是 JavaScript 为核心的 Web 技术栈。当然这么言之凿凿确有不妥，Java 、Go 乃至 Python 等偏后端语言同样扮演着重要角色（广义上也算 Web 技术栈了）。</p>
+<p>如此划分着两个时代整体上有些粗糙，但是便于解释我的逻辑_（如果你有自己的想法，欢迎回信讨论）_。这两个阶段在许多行业都留下了影子，前后可能有10年左右的时间跨度。而这10年，也让许多人在自己的组织中，成长为了「决策者」。所以，如果在做一款 B 端的产品，会经常性的发现在对接客户的决策者中，总会有那么几个领导，他们懂一些技术，但又不是非常懂，这就是所谓「信息化」的影响。一方面时间决定了他们能成为领导，另一方面机构内要负责此类事物的大多都是「懂技术」的领导，所以决策者很多时候都会符合这样的画像。寻找那个时代的技术概念，用来解释现在的技术概念，大体是有用且有效的沟通方式。</p>
+<p>在实际产品设计中，满足你标的的实际需求外，一款 toB 的产品是非常需要同时考虑两个群体的具体需求的。简单而言，产品需要回答**对于决策者能解决什么问题？**前两年的套路就是所谓的「大屏」、「领导驾驶舱」，显然这阵风已经越来越吹不动了，既有的形式已经是习惯了，所以除此之外，还需要有更加直接的触达决策者的产品功能。</p>
+<ul>
+<li>产品 —— RIP Tempo：显示快捷键的交互、邮件客户端已经不再是合适的「生意」了</li>
+<li>设计 —— 聊聊 Material Design 3 的动态</li>
+<li>编程 —— Electron 构建  macOS 应用之应用签名</li>
+</ul>
+<p>完整内容，可以订阅 Newsletter 哦<br>
+<a href="https://growing.zhubai.love/posts/2072204317117378560">通过竹白订阅 🔗</a><br>
+<a href="https://www.getrevue.co/profile/Hwang/">通过 revue 订阅🔗</a></p>
+<p><a href="https://hwang.top">Hwang</a> 📝 11月12日 📍 杭州</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hwang's Read List - EP 22]]></title>
+        <id>https://hwang.top/post/hwangs-read-list-ep22/</id>
+        <link href="https://hwang.top/post/hwangs-read-list-ep22/">
+        </link>
+        <updated>2021-08-26T01:47:14.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>确实许久未更新了。最近自己的事情忽然多了起来。<br>
+这是不定期更新的个人阅读目录，在我的输入流程中，文章从RSS以及其他不同平台获取，这里存放那些我好好看了的文章。</p>
+</blockquote>
+<p><a href="https://world.hey.com/dhh/basecamp-s-new-etiquette-regarding-societal-politics-at-work-b44bef69">Basecamp's new etiquette regarding societal politics at work</a></p>
+<blockquote>
+<p>Jason announced a raft of changes we've made to Basecamp earlier today. By far the most controversial is a new etiquette around societal politics at work, and the stances we'll take as a company. So to expand on that, here's a segment from what I wrote internally on that topic, as part of the announcement to employees at Basecamp. As c...</p>
+</blockquote>
+<p><a href="https://juejin.cn/post/6844904084936327182">妙用CSS变量，让你的CSS变得更心动</a></p>
+<blockquote>
+<p>CSS变量又叫CSS自定义属性，为什么会突然提起这个很少人用到的东西呢？因为最近在重构个人官网，不知道为什么突然喜欢用上CSS变量，可能其自身隐藏的魅力，让笔者对它刮目相看。 谈到为什么会在CSS中使用变量，下面举个栗子，估计大家一看就会明白。 看完可能会觉得使用CSS变量的代…</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MjM5NjYyMjM0MA==&amp;mid=2650934306&amp;idx=1&amp;sn=dd8937ebf5debcf2444b10c7b6ce50da&amp;chksm=bd10d5498a675c5f08f7ff618feaa76935ebcdf0bab3f297cc3425f3d862522301c3e7edcb26#rd">许多人觉得通过教育走出农村、改变命运充满励志的色彩，但这可能只是故事的一面 | 程猛 一席第838位讲者</a></p>
+<blockquote>
+<p>教育改变了命运，它还改变了什么？</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU2MDEwMTIwMg==&amp;mid=2247504712&amp;idx=1&amp;sn=85d7e00a8ae0dd718277b9e901a85893&amp;chksm=fc0fb175cb7838635170e03f4530c2caddc25d419247b9acd1d223a898081373654630b00ecd#rd">那些清北毕业生，回到了教培工厂｜谷雨</a></p>
+<blockquote>
+<p>选拔制度下的优胜者，最终又回到了系统。</p>
+</blockquote>
+<p><a href="https://sspai.com/post/65998">孤高舞者：LG 智能手机设计编年史 - 少数派</a></p>
+<blockquote>
+<p>很大程度上，LG 智能手机系列是一个被自家上游供应链技术引导着前进的存在。</p>
+</blockquote>
+<p><a href="https://getlotus.app/21-making-electron-apps-feel-native-on-mac">Lotus: making electron apps feel native on mac </a></p>
+<blockquote>
+<p>Manage GitHub notifications without stress.</p>
+</blockquote>
+<p><a href="https://www.logolounge.com/articles/2021-logo-trend-report">2021 Logo Trend Report | Articles | LogoLounge Logo Design Inspiration and Logo Design Competition</a></p>
+<blockquote>
+<p>Logo design article named 2021 Logo Trend Report</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA5NjE3ODExNQ==&amp;mid=2652984128&amp;idx=1&amp;sn=95fa26cdfec01acb770aa0cafe288b89&amp;chksm=8b61e9ecbc1660fa16a1f714beede747c4b8f593f0d029d558d0520066a06b8be501ac2deede#rd">我们并不需要 Deno</a></p>
+<blockquote>
+<p>Deno 一出生便带着光环 —— 它发布于 Node.js 创始人 Ryan Dahl 的演讲，当时有些人说 Node.js 要凉了，但我不这么认为。</p>
+</blockquote>
+<p><a href="https://medium.com/noteableio/designing-for-the-data-visualization-lifecycle-42d854cbf7d4">Designing for the Data Visualization Lifecycle</a></p>
+<blockquote>
+<p>Everywhere you look today, and especially in a data-driven organization, you’ll find data visualization. Data visualization is key to how modern companies create impact. It’s built into every tool…</p>
+</blockquote>
+<p><a href="https://type.cyhsu.xyz/2021/06/word-tutorial-para/">理解 Word 中的段落</a></p>
+<blockquote>
+<p>本文围绕「段落」这个 Word 文档中最基础的元素，依次讨论了段落的定义、结构层次、格式属性等问题。要正确使用…</p>
+</blockquote>
+<p><a href="https://scottspence.com/posts/a-digital-garden">A Digital Garden · Scott Spence</a></p>
+<blockquote>
+<p>I spent a couple of days now questioning how and what I write after\nreading a post from Richard Haines. In his post he mentioned how he\nstumbled across the Digital Garden idea.\n\nRichard’s post led me to Chris Biscardi’s thoughts on that and in\nturn...</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzAwOTUwNzI1Ng==&amp;mid=2247483918&amp;idx=1&amp;sn=7649cfe202e52c78f4ff7ab5be71a879&amp;chksm=9b5fdad9ac2853cfed33cf3d1770b6f26c76bf0cbddca842fa0cb52ad31a1d7f3ef0fab578c8#rd">Notion 的支撑者</a></p>
+<blockquote>
+<p>我并没有创新什么，我只是在复刻历史。</p>
+</blockquote>
+<p><a href="https://spec.fm/specifics/8-pt-grid">8-Point Grid</a></p>
+<blockquote>
+<p>Using multiples of 8 to define dimensions, padding, and margin of elements</p>
+</blockquote>
+<p><a href="https://sspai.com/post/67038">WWDC21 Swift 学生挑战赛落下帷幕，我们和 3 位获奖学生聊了聊 - 少数派</a></p>
+<blockquote>
+<p>WWDC 开发者大会前夕，少数派采访到了 3 位获得今年 Swift 挑战赛奖项的学生，了解了他们对于编程学习的经历与相关看法。</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MTMwNDMwODQ0MQ==&amp;mid=2652913444&amp;idx=1&amp;sn=3f589a89870c9ab018e62f419c0f1c30&amp;chksm=7e5542924922cb84da0325e4e7b7c2b688cea94620dda99cfb766eda3053456e1b2f98f13819#rd">DeepMind 又跟谷歌「闹独立」，背后其实是 AI 行业的通病</a></p>
+<blockquote>
+<p>AlphaGo 之父，在研究和商业这场对弈中，还没想好他的下一步棋要落在哪里。</p>
+</blockquote>
+<p><a href="http://www.woshipm.com/pd/4421332.html">玩转数据，从指标体系开始 | 人人都是产品经理</a></p>
+<blockquote>
+<p>编辑导语：指标体系的建立，能够驱动业务或公司更好地前进，同时也有助于利用指标体系评判业务状态，发现有异常的指标并予以修正。本文作者从自己实际工作实践出发，总结分享了搭建指标体系的相关经验，希望对大家有所帮助。 你对越刷越上瘾的抖音又爱又恨，对千人千面淘宝智能推</p>
+</blockquote>
+<p><a href="http://www.thepaper.cn/newsDetail_forward_13269188">为何鸟类物种多样性最高？这块距今1.2亿年的化石给出线索_绿政公署_澎湃新闻-The Paper</a></p>
+<blockquote>
+<p>鸟类是目前世界上物种和生态多样性最高的陆生脊椎动物。 它们的演化如此成功，一个关键因素便是鸟类头骨具有独特的可动性：多数鸟类的上颌可独立于下颌和脑颅进行活动，有</p>
+</blockquote>
+<p><a href="https://juejin.cn/post/6844904067060203527">使用verdaccio搭建npm私有源</a></p>
+<blockquote>
+<p>业务中，与合作方共建代码，有时需要提供npm私有包。使用代码copy的方法，影响整个项目的可移植性，也无法做版本控制和管理。在此背景下，选择使用verdaccio搭建一个轻型的npm私有源服务，为合作方提供需要共享的私有包。这里简要记录下搭建过程、安全策略、使用方法。 2.1、…</p>
+</blockquote>
+<p><a href="https://sspai.com/post/67996">我们需要什么样的双向链接，它适合你吗？ - 少数派</a></p>
+<blockquote>
+<p>近一年来笔记行业发展迅猛，“双向链接”这一概念受到很多知识管理爱好者的追捧，也有很多人清醒地认识到双向链接没有那么神奇，甚至存在很多问题。经过了一年多的实践，我从双链软件中获益许多，于是也在不断地思考 ...</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA3MDIzODIwMg==&amp;mid=2458092470&amp;idx=1&amp;sn=b392e00b6b2ca63f5d30c3b0eb8c260e&amp;chksm=8848c923bf3f4035d8826afddcd98bc967cf80f71eb91ce3cab6a6ac78acc41c3b7fabc4c22f#rd">从整顿教培产业看中国治理与行业大政治</a></p>
+<blockquote>
+<p>​以前有句话说，“到农村去，到边疆去，到祖国最需要的地方去”。其实现在做投资、做企业也一样，到那些契合中央大政方略、符合未来发展新格局的行业里去。</p>
+</blockquote>
+<p><a href="https://www.youtube.com/watch?v=h2xoRkzjQoc">20 Mac Apps I Can't Live Without!</a></p>
+<blockquote>
+<p>These are the apps I install on every new Mac—I can't live without them!Go through my link https://www.privateinternetaccess.com/SL to support my channel and...</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4NDk5OTgzMg==&amp;mid=2650591453&amp;idx=1&amp;sn=936bae5caf69984e9aea45139fd3bc01&amp;chksm=87d6db2ab0a1523cbd401de1fecbd332f13df95aa3cf6fd776fbd630e4462e2176e952fb4162#rd">步行如何成为我的生产力系统</a></p>
+<blockquote>
+<p>克雷格认为散步是一个操作系统，他可以用它来支持、反馈和激发他写作的所有基本功能。</p>
+</blockquote>
+<p><a href="https://sspai.com/post/67784">HomeKit 从零完全入门指南（一）：认识 HomeKit - 少数派</a></p>
+<blockquote>
+<p>如果你对智能家居有所了解，那应该或多或少听到过 HomeKit。HomeKit 究竟是什么？能做什么？怎么做到的？本文将从核心原理的角度来解答一下这个问题。</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4Njc0MjIyMQ==&amp;mid=2652271583&amp;idx=1&amp;sn=3faaa73fdb34f7972f23ced1ea9af0b3&amp;chksm=8426d67db3515f6b7f0fb8a46befeeb564ee32e4d0cb8b13255580ae47594c4aecfd584d0f4b#rd">当 MUJI、UNIQLO、Aēsop 用一种无形的方式渗透进我们的生活</a></p>
+<blockquote>
+<p>值得收藏，轻触专辑封面，感受一下。</p>
+</blockquote>
+<p><a href="https://sspai.com/post/66917">东西我都装好了｜由极致性价比打造的宿舍收纳系统 - 少数派</a></p>
+<blockquote>
+<p>这是我的宿舍床。和全国大多数宿舍一样，它采取上床下桌的结构，上半部分是休息空间，下半部分是学习空间，床的尺寸是2m*0.9m，有分区的置物空间、写字桌和一个两层衣柜。在家具厂，这样的结构被称之为「新型 ...</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNTQ4ODg4OA==&amp;mid=2247486978&amp;idx=1&amp;sn=2816485295e210153d9f90cf6749a0ed&amp;chksm=e8e71d15df909403cea096fd329d0f68fcdb3e1f2b182bb055077ef3a4e8e3a1a83bf4def277#rd">一蓑烟雨任平生，也无风雨也无晴</a></p>
+<blockquote>
+<p>历经「乌台诗案」，被贬黄州三年，躬耕东坡，钻研佛经，这些种种经历改变了苏东坡，而看田归来路上的一场风雨，在这个伟大的瞬间，通过他的身体，写下了「一蓑烟雨任平生，也无风雨也无晴」的千古名句。</p>
+</blockquote>
+<p><a href="https://sspai.com/post/68250">iPad 使用指南 2021 - 少数派</a></p>
+<blockquote>
+<p>今年是我毕业的第五年，也就是说，iPad已经整整伴随我八年了。我不知道我自己在这八年里是不是有着足够大的进步，但我知道，至少iPad变化很多。现在，我正在用2021版的12.9英寸iPadPro写下这 ...</p>
+</blockquote>
+<p><a href="https://sspai.com/post/68372">10 年过去了，我依然很想念你 - 少数派</a></p>
+<blockquote>
+<p>本文通过一封书信的形式，帮助大家了解 webOS 背后的那些人和事。</p>
+</blockquote>
+<p><a href="https://buninux.com/learn/">Bunin Blog</a></p>
+<blockquote>
+<p>UI/UX Design Blog &amp; Learning Center</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MTMwNDMwODQ0MQ==&amp;mid=2652926102&amp;idx=1&amp;sn=903c1eaf84bd49e51e47b076a9df73bd&amp;chksm=7e550d2049228436d4d2c2f676731b57a0e79d7b9eb9867b87ca11e3e65a01c384b38a1872f5#rd">谷歌设计师自述：大厂们的无障碍设计，很多都做错了</a></p>
+<blockquote>
+<p>同理心要先于技术投入。</p>
+</blockquote>
+<p><a href="https://every.to/napkin-math/is-facebook-fixable">Is Facebook Fixable</a></p>
+<blockquote>
+<p>A Review of An Ugly Truth</p>
+</blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/32091600">第五篇：关于VIE （可变利益实体）</a></p>
+<blockquote>
+<p>拖更许久，现在慢慢还债，VIE这个东西是最近才搞清楚了，就抛砖引玉先写一些。 在还是小朋友的时候，就知道了VIE，当时对VIE的理解就是所有海外公司为啥都有这个，VIE agreement感觉也没啥实际性的东西呀。虽然满…</p>
+</blockquote>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MjM5MDI5OTkyOA==&amp;mid=2665649071&amp;idx=1&amp;sn=70665d6325791747b05c1bd64fabf016&amp;chksm=bd50d1d88a2758cec0a5ee0b0e3966221605366c749cc952ef935ae540f8b47dbbfe58ab8467#rd">64岁大师独自跑到上海，蜗居34㎡老破小：前所未有的快乐</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[用 Notion 部署你的个人博客 —— 基于 Nobelium + Vercel 的个人博客搭建指南]]></title>
+        <id>https://hwang.top/post/yong-notion-bu-shu-ni-de-ge-ren-bo-ke-ji-yu-nobelium-vercel-de-ge-ren-bo-ke-da-jian-zhi-nan/</id>
+        <link href="https://hwang.top/post/yong-notion-bu-shu-ni-de-ge-ren-bo-ke-ji-yu-nobelium-vercel-de-ge-ren-bo-ke-da-jian-zhi-nan/">
+        </link>
+        <updated>2021-05-20T09:01:58.000Z</updated>
+        <content type="html"><![CDATA[<p>静态博客的平台层出不穷，对于普通人而言，部署个人博客也早已不再是一件难事。本文将介绍通过 Nobelium 项目将个人博客托管到 Vercel，再绑定个人域名的操作过程。</p>
+<p>如果你按照本文操作，那么最后能够收获外观不错的个人博客，并且你可以在 Notion 上撰写你的博客，内容会自动同步到个人博客中。如果你在使用 Notion 记录一些知识/生活或是其他，通过 Nobelium 都是一个不错的分享内容的方式。</p>
+<p><a href="https://sspai.com/post/66678">本文发布在少数派上，点击前往阅读</a></p>
+]]></content>
+    </entry>
+</feed>

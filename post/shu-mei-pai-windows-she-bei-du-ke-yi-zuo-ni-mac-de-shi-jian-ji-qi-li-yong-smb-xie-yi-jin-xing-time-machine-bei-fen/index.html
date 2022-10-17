@@ -1,0 +1,447 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份 - Hwang&#39;s Blog</title>
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://hwang.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份 - Hwang&#39;s Blog - Atom Feed" href="https://hwang.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159350557-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-159350557-1');
+  </script>
+    
+
+  <meta name="description" content="
+本文以发布于少数派：https://sspai.com/post/57539
+推荐在少数派阅读
+
+
+macOS 为用户提供了便捷的系统备份功能：Time Machine （你可以从少数派2015年的老文中学习使用这个功能：Time Mac..." />
+  <meta property="og:title" content="树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份 - Hwang&#39;s Blog">
+  <meta property="og:description" content="
+本文以发布于少数派：https://sspai.com/post/57539
+推荐在少数派阅读
+
+
+macOS 为用户提供了便捷的系统备份功能：Time Machine （你可以从少数派2015年的老文中学习使用这个功能：Time Mac..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen/" />
+  <meta property="og:image" content="https://hwang.top/post-images/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份 - Hwang&#39;s Blog">
+  <meta name="twitter:description" content="
+本文以发布于少数派：https://sspai.com/post/57539
+推荐在少数派阅读
+
+
+macOS 为用户提供了便捷的系统备份功能：Time Machine （你可以从少数派2015年的老文中学习使用这个功能：Time Mac...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://hwang.top/post/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://hwang.top/media/css/prism-synthwave84.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://hwang.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Hwang&#39;s Blog
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份
+        </h1>
+        
+          <img src="https://hwang.top/post-images/shu-mei-pai-windows-she-bei-du-ke-yi-zuo-ni-mac-de-shi-jian-ji-qi-li-yong-smb-xie-yi-jin-xing-time-machine-bei-fen.png" alt="树莓派、Windows 设备都可以做你 Mac 的「时间机器」——利用 SMB 协议进行 Time Machine 备份" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2019-12-02 · 6 min read</div>
+          
+            <a href="https://hwang.top/tag/AMJH5xgec/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              少数派
+            </a>
+          
+            <a href="https://hwang.top/tag/CjydnGrXlu/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              长文
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <blockquote>
+<p>本文以发布于少数派：https://sspai.com/post/57539<br>
+推荐在少数派阅读</p>
+</blockquote>
+<!-- more -->
+<p>macOS 为用户提供了便捷的系统备份功能：Time Machine （你可以从少数派2015年的老文中学习使用这个功能：<a href="https://sspai.com/post/30550">Time Machine 使用教程</a> ）。</p>
+<p>一般而言，Time Machine 需要你连接一块硬盘到你的 Mac 上才能够启动。当然，你可以通过「有线连接」和「无线连接」的方式，进行备份。有线连接不再赘述，可以参考上面的教程。而无线连接，少数派上同样可以参考：<a href="https://sspai.com/post/48372">把群晖 NAS 变成「时间返回舱」，轻松搞定 Time Machine 无线备份</a>，而本文将介绍除了使用 NAS 以外，你还可以在任何能够使用 SMB 协议的设备上创建你的「时间机器」。</p>
+<!-- more -->
+<p>首先，SMB 协议是一种能够将本机电脑上的文件夹分享到局域网内其他设备上的一种协议。你可以简单的理解为是一种文件共享的协议。我们要做的就是通过这个协议，将主机上的某个文件共享到你的 Mac 上，然后在那上面创建备份。所以，我们需要的具体步骤就是：1. 通过 SMB 分享一个文件夹； 2. 在 Mac 上加载这个文件夹；3. 利用这个文件夹创建备份。</p>
+<h2 id="1-通过-smb-分享一个文件夹">1. 通过 SMB 分享一个文件夹</h2>
+<p>这一步，我们需要做的事，具体而言就是：</p>
+<ol>
+<li>开启 SMB 服务；</li>
+<li>配置一个文件夹进行共享；<br>
+所以，正如标题里写的，无论是树莓派这种 Linux 设备，还是 Windows 设备，你都可以开启 SMB 服务，进行局域网内的文件的共享。所以，如果你有一台 Linux 设备，你可以参考下面的树莓派的步骤，如果你有一台 Windows 设备，可以参考 Windows 的步骤。</li>
+</ol>
+<h3 id="树莓派上开启-smb-服务">树莓派上开启 SMB 服务</h3>
+<p>详细内容，同样可以参考我派的文章：<a href="https://sspai.com/post/40721">利用 Samba - 像管理本地文件一样处理树莓派文件</a>。<br>
+首先，更新源：</p>
+<pre><code class="language-bash">$ sudo apt-get update
+</code></pre>
+<p>第二步，安装 samba 服务：</p>
+<pre><code class="language-bash">$ sudo apt-get install samba samba-common-bin
+</code></pre>
+<p>第三步，修改 SMB 的配置，这里使用 vim 进行编辑：</p>
+<pre><code class="language-bash">$ sudo vim /etc/samba/smb.conf
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz0w5huj31040pyjwx.jpg" alt="" loading="lazy"></figure>
+<p>在配置文件的最后添加：</p>
+<pre><code class="language-bash">[pi]
+
+    path = /home/pi/
+
+    valid users = pi
+
+    browseable = Yes
+
+    writeable = Yes
+
+    writelist = pi
+
+    create mask = 0777
+
+    directory mask = 0777
+</code></pre>
+<p>保存退出后，重启一下 samba 服务</p>
+<pre><code class="language-bash">$ sudo /etc/init.d/samba restart
+</code></pre>
+<p>最后一步，就是添加 <code>pi</code> 用户为 <code>Samba</code>用户，这一步，会让你设置共享时的密码。</p>
+<pre><code class="language-bash">$ sudo smbpasswd -a pi
+</code></pre>
+<h3 id="windows-上开启-smb-服务">Windows 上开启 SMB 服务</h3>
+<p>Windows 上做 Smb 共享会方便很多，首先在一个磁盘空间比较富裕的地方，创建一个文件夹，然后右键，属性，打开「共享」栏：<br>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz1iym9j30rq10ygnz.jpg" alt="" loading="lazy"><br>
+然后点击共享，弹出用户设置界面：<br>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz2hyj9j30zc0sw0uj.jpg" alt="" loading="lazy"></p>
+<p>设置共享的账户，以及权限设置为「读和写」，一般而言推荐在这里新建一个专门的共享账户，账户和密码就是届时需要在mac上输入的账户和密码：<br>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz3finaj30zk0sijt1.jpg" alt="" loading="lazy"></p>
+<p>账户设置完成后，点击「共享」即可：<br>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz4ezluj30zs0s6gn7.jpg" alt="" loading="lazy"></p>
+<p>点击完成，这个文件就已经能够在局域网访问了。这里做个简单的提醒，部分Windows设备的防火墙设置，会禁用共享，可以先通过关闭防火墙的方式来排除是不是防火墙的问题，再通过对应规则的设置，重新开启防火墙即可。</p>
+<h2 id="2-在-mac-上加载这个文件夹">2. 在 Mac 上加载这个文件夹</h2>
+<p>这个时候，打开你的 finder，应该能够在「位置这一栏」下看到树莓派，或者你的 Windows 设备的名字了。点击后，就能看到你共享的文件夹了。</p>
+<figure data-type="image" tabindex="2"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz5b6e2j31ca0u0n9m.jpg" alt="" loading="lazy"></figure>
+<p>如果没有看到，那么通过右键 finder 图标，点击「连接服务器」，输入：<code>smb://设备的IP地址/共享的文件夹名称 </code> 的方式连接，在输入账号密码后，也能够连接上这个文件夹。正确连接后，就说明，其他设备上的硬盘，已经能够为你的 Mac 所用了。</p>
+<p>接下来我们就要进行最后一个步骤，创建一个「时间机器」了！</p>
+<h2 id="3-利用这个文件夹创建备份">3. 利用这个文件夹创建备份</h2>
+<p>当你兴奋的打开你的 Time Machine 设置，点击「选择备份磁盘」时，看到却是：</p>
+<p><img src="%E6%88%AA%E5%B1%8F2019-11-18%E4%B8%8A%E5%8D%889.09.15.png" alt="" loading="lazy"><br>
+<em>是的，并没有你想要的那个文件夹</em></p>
+<p>接下来，我们要做的，其实是创建一个磁盘镜像文件，然后将这个磁盘镜像文件挂载到你的 Mac 上，作为一个「虚拟硬盘」，然后利用这个「虚拟硬盘」进行备份。具体的：</p>
+<h3 id="31-创建一个空白映像">3.1 创建一个空白映像：</h3>
+<p>打开「磁盘工具」，选择菜单栏中的 「新建映像」，选择「空白映像…」，然后如图所示，填入信息：<br>
+<img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.31.56.png" alt="" loading="lazy"><br>
+其中「大小」可以根据你实际需求来填写<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
+<h3 id="32-将此这个空白映像拷贝到你的-smb-共享文件夹中">3.2 将此这个空白映像拷贝到你的 SMB 共享文件夹中：</h3>
+<p>在 finder 中先推出这个磁盘，然后在保存的位置中，将这个磁盘文件拖入 SMB 共享文件夹的对应位置：</p>
+<h3 id="33-挂载这个磁盘">3.3 挂载这个磁盘</h3>
+<p>双击在 SMB 共享文件夹中的这个映像文件，然后他就会挂在在你的 Mac 上：</p>
+<figure data-type="image" tabindex="3"><img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.39.50.png" alt="" loading="lazy"></figure>
+<p>最后，通过 terminal 将这个磁盘设置为 TimeMachine 的备份磁盘：</p>
+<pre><code class="language-bash">$sudo tmutil setdestination /Volumes/TimeMachine
+</code></pre>
+<p>这里的 <code>/Volumes/TimeMachine</code> 就是这个磁盘的挂载点，一般而言就是 <code>/Volumes/</code> + 磁盘的名称，如果你不是很确定，可以在磁盘工具中，选择这个磁盘，点击右键，选择「显示简介」，看到挂载信息：<br>
+<img src="%E6%88%AA%E5%B1%8F2019-11-23%E4%B8%8B%E5%8D%885.44.41.png" alt="" loading="lazy"></p>
+<p>输入完命令后，再输入你的Mac密码，即可成功挂载。当你再次打开 TimeMachine 时，已经可以开始备份了。</p>
+<figure data-type="image" tabindex="4"><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ipz69tdej316e0u0dsk.jpg" alt="" loading="lazy"></figure>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>一个400GB的空白磁盘映像，大概有400MB <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  <p style="text-align: left; color: brown;">
+    生而为人，应该能够换尿布、策划入侵、杀猪、开船、造房子、
+    写十四行诗、算账、建墙、正骨、抚慰临终之人、接受命令、
+    下达命令、合作、独行、解决方程式、分析新问题、
+    清理马粪、编程、烹饪美食、高效战斗、英勇牺牲。
+    专业分工是给昆虫准备的。
+</p>
+    <br>
+    <br>
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+
+    <br>
+    <p>...</p>
+    <br>
+    <center> <img
+            src="https://img.shields.io/badge/dynamic/json?color=da282a&label=%E5%B0%91%E6%95%B0%E6%B4%BE%E5%85%B3%E6%B3%A8&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dsspai%26queryKey%3Dhwang" />
+    </center>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#1-%E9%80%9A%E8%BF%87-smb-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9">1. 通过 SMB 分享一个文件夹</a>
+<ul>
+<li><a href="#%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8A%E5%BC%80%E5%90%AF-smb-%E6%9C%8D%E5%8A%A1">树莓派上开启 SMB 服务</a></li>
+<li><a href="#windows-%E4%B8%8A%E5%BC%80%E5%90%AF-smb-%E6%9C%8D%E5%8A%A1">Windows 上开启 SMB 服务</a></li>
+</ul>
+</li>
+<li><a href="#2-%E5%9C%A8-mac-%E4%B8%8A%E5%8A%A0%E8%BD%BD%E8%BF%99%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9">2. 在 Mac 上加载这个文件夹</a></li>
+<li><a href="#3-%E5%88%A9%E7%94%A8%E8%BF%99%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%88%9B%E5%BB%BA%E5%A4%87%E4%BB%BD">3. 利用这个文件夹创建备份</a>
+<ul>
+<li><a href="#31-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%A9%BA%E7%99%BD%E6%98%A0%E5%83%8F">3.1 创建一个空白映像：</a></li>
+<li><a href="#32-%E5%B0%86%E6%AD%A4%E8%BF%99%E4%B8%AA%E7%A9%BA%E7%99%BD%E6%98%A0%E5%83%8F%E6%8B%B7%E8%B4%9D%E5%88%B0%E4%BD%A0%E7%9A%84-smb-%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD">3.2 将此这个空白映像拷贝到你的 SMB 共享文件夹中：</a></li>
+<li><a href="#33-%E6%8C%82%E8%BD%BD%E8%BF%99%E4%B8%AA%E7%A3%81%E7%9B%98">3.3 挂载这个磁盘</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://hwang.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://hwang.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'dTgTog99vAEi8ws6LDdFg4iI-gzGzoHsz',
+    appKey: 'CnvncVESy4G5mVQRxk1G9Uef',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '来都来了，不妨评论一下',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

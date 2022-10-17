@@ -1,0 +1,436 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Docker 的入门「指北」 - Hwang&#39;s Blog</title>
+<link rel="shortcut icon" href="https://hwang.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://hwang.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://hwang.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Docker 的入门「指北」 - Hwang&#39;s Blog - Atom Feed" href="https://hwang.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159350557-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-159350557-1');
+  </script>
+    
+
+  <meta name="description" content="
+本文以发布于少数派：https://beta.sspai.com/post/56893
+推荐在少数派阅读
+
+如果你购买过 VPS 云主机，那么或多或少，你都可能听说过 Docker。如果你从未听说过Docker，那么本文可能能够为你开启新..." />
+  <meta property="og:title" content="Docker 的入门「指北」 - Hwang&#39;s Blog">
+  <meta property="og:description" content="
+本文以发布于少数派：https://beta.sspai.com/post/56893
+推荐在少数派阅读
+
+如果你购买过 VPS 云主机，那么或多或少，你都可能听说过 Docker。如果你从未听说过Docker，那么本文可能能够为你开启新..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://hwang.top/post/docker-de-ru-men-zhi-bei/" />
+  <meta property="og:image" content="https://hwang.top/post-images/docker-de-ru-men-zhi-bei.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="Docker 的入门「指北」 - Hwang&#39;s Blog">
+  <meta name="twitter:description" content="
+本文以发布于少数派：https://beta.sspai.com/post/56893
+推荐在少数派阅读
+
+如果你购买过 VPS 云主机，那么或多或少，你都可能听说过 Docker。如果你从未听说过Docker，那么本文可能能够为你开启新...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://hwang.top/post/docker-de-ru-men-zhi-bei/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://hwang.top/media/css/prism-synthwave84.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://hwang.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Hwang&#39;s Blog
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          Docker 的入门「指北」
+        </h1>
+        
+          <img src="https://hwang.top/post-images/docker-de-ru-men-zhi-bei.png" alt="Docker 的入门「指北」" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2019-10-07 · 9 min read</div>
+          
+            <a href="https://hwang.top/tag/wJNvGSVZG/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              docker
+            </a>
+          
+            <a href="https://hwang.top/tag/AMJH5xgec/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              少数派
+            </a>
+          
+            <a href="https://hwang.top/tag/CjydnGrXlu/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              长文
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <blockquote>
+<p>本文以发布于少数派：https://beta.sspai.com/post/56893<br>
+推荐在少数派阅读</p>
+</blockquote>
+<p>如果你购买过 VPS 云主机，那么或多或少，你都可能听说过 Docker。如果你从未听说过Docker，那么本文可能能够为你开启新世界。</p>
+<!-- more -->
+<p>利用Docker，你能够哦非常轻松的部署各类服务，无论是个人云盘（<a href="https://sspai.com/post/55217">Nextcloud：打造属于自己的网盘服务 Docker 版(附带视频</a>）、个人的RSS服务（<a href="https://sspai.com/post/53072">利用 Docker 搭建 Tiny Tiny RSS 服务</a>）、HomeKit 桥接（<a href="https://sspai.com/post/53071">利用 Docker 搭建 HomeKit 智能家居</a>），亦或者搭建一个个人博客（<a href="https://sspai.com/post/36751">使用 Docker 部署 Ghost 教程</a>），甚至是做一个自己的维基百科、自己的社交软件，都能够轻松的实现。</p>
+<p>是的，Docker 就好像是 服务器端的「应用商店」，你能够通过Docker，轻松的部署各种属于个人、团队的服务。而现如今，无论是利用各个平台的云主机，还是 树莓派、群晖、威联通等这些物理的服务器主机，甚至是自己废旧的老电脑，都能够很容易的使用上 Docker。</p>
+<p>在正式开启前，本文默认读者了解基本的命令行操作，以及了解基本的Linux相关知识，如果您还不了解这些，可以通过 B站 这个 UP 主的视频有所了解：<a href="https://www.bilibili.com/video/av56233347">https://www.bilibili.com/video/av56233347</a></p>
+<h2 id="那么开启-docker-之旅吧">那么开启 Docker 之旅吧！</h2>
+<p>Docker 可以理解为寄存在主机上的特殊的虚拟机。它利用特殊的虚拟化技术，比一般的虚拟化技术能够更加高效合理的利用资源。一台主机上可以创建众多的容器，这些容器通过特定的方式与主机共享硬件资源，并且访问特定的文件，使用特定的端口。通过 Docker ，一台主机能够运行多种不同的服务。</p>
+<h3 id="第一步安装或者启用-docker">第一步，安装或者启用 Docker</h3>
+<p>一般来说，Docker 会运行在 Linux 服务器上，无论是哪种发行版本，你都可以非常容易的在搜索引擎中找到其他平台的安装方法。这里我以 Ubuntu 为例：</p>
+<pre><code class="language-bash">$ sudo apt update # 先更行一下软件包缓存
+$ sudo apt install docker-ce # ce 代表社区版
+</code></pre>
+<p>接着启动 Docker 服务</p>
+<pre><code class="language-bash">$ sudo systemctl enable docker
+$ sudo systemctl start docker
+</code></pre>
+<p>这样，你就可以尝试一下运行 <code>docker</code> 命令了</p>
+<pre><code class="language-bash">$ sudo docker run hello-world
+</code></pre>
+<blockquote>
+<p>默认情况下，docker 命令需要使用 <code>root</code> 用户或者在<code>docker</code>组下的用户才能使用（<code>docker</code> 命令会使用 <a href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a> 与 Docker 引擎通讯）。也就是说，如果不设置，默认情况下，所有的 <code>docker</code> 命令都需要加 <code>sudo</code>。<br>
+一般情况下，你可以创建一个名为  <code>docker</code> 的用户组，再将当前用户加入到 <code>docker</code> 组中，使得操作更为安全。</p>
+</blockquote>
+<blockquote>
+<pre><code class="language-bash">$ sudo groupadd docker #创建 Docker 组。
+$ sudo usermod -aG docker $USER #添加当前用户到 docker 用户组中，也可将 $USER 替换为你想加入到 docker 组中的用户。
+</code></pre>
+</blockquote>
+<h3 id="第二步拉取你的第一个-image">第二步，拉取你的第一个 Image</h3>
+<p>其实你可以这么理解 Docker，你可以在一个名为 <a href="https://hub.docker.com/">Docker Hub</a> 的网站中，查找Docker 镜像（image），这个过程就好像是在 App Store 中搜索自己需要下载的应用一样。查找完想要下载的镜像后，在终端中输入：</p>
+<pre><code class="language-bash">$ docker pull [镜像名称]
+</code></pre>
+<p>可以拉取镜像的到本地。是的，你就下载了这个应用，只不过是在服务端。当然，一般来说这个过程会比较缓慢，你可以<a href="https://yeasy.gitbooks.io/docker_practice/content/install/mirror.html">替换国内源</a>加速这一过程。</p>
+<h3 id="第三步启动你的服务">第三步，启动你的服务</h3>
+<p>与一般应用下载打开不同，Docker 的镜像可以重复的被打开成不同的容器。你可以简单的理解为这是「应用双开」，或者说是「应用多开」。我们使用 <code>docker run</code> 命令来启动容器。</p>
+<p>这个启动的过程可以是一次性的启动，即直接使用 <code>docker run</code> + 一些列参数的方式启动服务，也可以通过 <code>docker compose</code> 来编排你的项目。由于 compose 会相对专业，本文就不做过多的介绍了，这里只以 <code>docker run</code> 为例作为讲解，以下是常见的参数：</p>
+<ol>
+<li><code>-d</code> ：正常情况下，启动一个服务区，我们都会让其在后台运行，所以使用参数 <code>-d</code> 来告诉 Docker，在后台默默奉献即可。</li>
+<li><code>--name=</code> ：前面已经提到了，你可以对一个 Docker 镜像进行多开操作，所以通过 <code>dockr run -d --name=[你的名字]</code> 的方式，可以指定开启的这个容器的名称，这样在多开的情况下，能够更为方便的进行管理。</li>
+<li><code>-p</code> : 指定端口的映射。</li>
+</ol>
+<p>这里简单讲解一下端口的含义：以用户输入在浏览器中输入<code>www.sspai.com</code> 为例，首先浏览器会通过 DNS 服务器把这个 Url 翻译为 IP 地址，再通过 IP 地址，找到少数派的服务器，再通过端口号确定开启的服务，例如如果你输入的是：<code>https:\\www.sspai.com</code>，那么对应的端口就是 443。端口号就相当于服务器的柜台，同个服务区会有多个柜台提供服务。诸如 <code>http</code> 服务，默认是 <code>80</code> 端口， <code>https</code> 默认是 <code>443</code> 端口，类似的 <code>FTP</code> 服务是 <code>21</code> 等等。 并且<strong>一个端口只能支持一个服务，就是说一个柜台只支持办理一项服务</strong>。</p>
+<p>回到 <code>-p</code> 这个参数，<code>-p 8080:80</code> 就是指将 docker 中开启的端口，映射到主机的 <code>8080</code> 端口中。也就是说通过主机的IP地址的<code>8080</code> 端口，可以访问到 docker 容器的<code>80</code> 端口服务。 服务器的 <code>8080</code> 柜台接收到的服务，会发送到容器的<code>80</code>柜台中。是的，容器也相当于是一个服务器，在 Docker 内部，他们之间也是有 IP 地址的说法的，所以容器也是需要开「柜台」来管理服务的。</p>
+<p>理解这一步非常重要，和一般的使用应用不同，服务器上的应用就是一直在运行，然后让你去访问的，所以 <code>-p</code> 参数设置不对，可就找不到柜台办理正确的服务器了。例如运行：</p>
+<pre><code class="language-bash">$ docker run -d --name=nextcloud_demo -p 8080:80 nextcloud
+</code></pre>
+<p>那么你可以通过 <code>http://localhost:8080</code> 访问到你的 nextcloud 服务。这里的 <code>loaclhost</code> 指的是在 Docker 服务器上访问。如果你想通过自己的电脑，访问 Docker 服务器上的服务，把 <code>loaclhost</code> 替换为服务器的 IP 地址即可。</p>
+<ol start="4">
+<li><code>-v</code> ：建立主机于docker容器内的文件关联。通过<code>-v</code> 能够 主机的文件映射到 docker 容器中，例如：</li>
+</ol>
+<pre><code class="language-bash">$ docker run -d \
+-v nextcloud:/var/www/html \
+nextcloud
+</code></pre>
+<p>就是将本地本地文件夹 <code>nextcloud</code> 映射到容器中的 <code>/var/www/html</code> 目录。</p>
+<p>这 4 个参数就是docker 最基础也是最常用的参数了。了解了这四个参数，再参照 Docker Hub 下每一个镜像的使用说明，你就可以尽情的拥抱和享受开源社区的各种服务了。</p>
+<h2 id="推荐一些好用的-docker-镜像">推荐一些好用的 Docker 镜像</h2>
+<p>除了开篇提到的 NextCloud、Tiny Tiny RSS、Ghost 等服务外，还有一些镜像值得尝试：</p>
+<ol>
+<li><a href="https://hub.docker.com/_/mediawiki">MediaWiki</a>： 和维基百科一样的属于个人或者团队的维基服务。</li>
+<li><a href="https://hub.docker.com/r/wekanteam/wekan">Wekan</a>：属于个人或者团队的开源看板应用。参考Trello等服务。</li>
+<li><a href="https://hub.docker.com/_/wordpress">WordPress</a>：为人所知的、被广泛使用的、收购了tumblr的博客服务，可以用来搭建个人博客，甚至商用网站。</li>
+<li>gitlab、gitea 等 Git 服务：如果有团队代码管理需求，可以使用 Docker 快速部署一个私用的 Git 服务。</li>
+</ol>
+<h2 id="部署一时爽运维火葬厂">部署一时爽，运维「火葬厂」</h2>
+<p>Docker 让服务的安装变得异常容易，但是选择一项服务后，后面的运维才是真正折腾人的地方。</p>
+<p>首先是管理容器中，最常使用到：</p>
+<pre><code class="language-bash">$ docker ps #查看运行中的容器。
+$ docker ps -a #查看所有容器，包括停止的。
+$ docker images #查看安裝的镜像
+</code></pre>
+<p>然后是停止、启动已有的容器：</p>
+<pre><code class="language-bash">$ docker stop &lt;容器名称/ID&gt; # 正常停止容器
+$ docker start &lt;容器名称/ID&gt; # 启动已有容器
+$ docker kill &lt;容器名称/ID&gt; # 强制停止容器
+</code></pre>
+<p>一般容器运行后，会有一个 ID，用以区分容器，这个ID 一般都是乱序的，所以之前的 <code>--name</code> 参数，能够使你更加方便对容器进行管理。</p>
+<p>除此之外，还有就是进入 Docker 容器中，修改一些配置文件：</p>
+<pre><code class="language-bash">$ sudo docker exec -it &lt;容器名称/ID&gt; /bin/bash
+</code></pre>
+<p>就是说你可以通过这个命令，进入到 容器的 <code>bash</code> 中，对容器内进行一些修改。</p>
+<p>最后 docker 还有许多其他的命令和方法可供学习。作为当今最受欢迎的容器化解决方案，docker 在业界发光发亮的同时，也为一般用户，「一键」启用某些服务提供了契机。利用开源社区，你可以比以往任何时候都更为容易的实现许多互联网服务的「自给自足」。</p>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  <p style="text-align: left; color: brown;">
+    生而为人，应该能够换尿布、策划入侵、杀猪、开船、造房子、
+    写十四行诗、算账、建墙、正骨、抚慰临终之人、接受命令、
+    下达命令、合作、独行、解决方程式、分析新问题、
+    清理马粪、编程、烹饪美食、高效战斗、英勇牺牲。
+    专业分工是给昆虫准备的。
+</p>
+    <br>
+    <br>
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+
+    <br>
+    <p>...</p>
+    <br>
+    <center> <img
+            src="https://img.shields.io/badge/dynamic/json?color=da282a&label=%E5%B0%91%E6%95%B0%E6%B4%BE%E5%85%B3%E6%B3%A8&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dsspai%26queryKey%3Dhwang" />
+    </center>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E9%82%A3%E4%B9%88%E5%BC%80%E5%90%AF-docker-%E4%B9%8B%E6%97%85%E5%90%A7">那么开启 Docker 之旅吧！</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E5%AE%89%E8%A3%85%E6%88%96%E8%80%85%E5%90%AF%E7%94%A8-docker">第一步，安装或者启用 Docker</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E6%8B%89%E5%8F%96%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA-image">第二步，拉取你的第一个 Image</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%90%AF%E5%8A%A8%E4%BD%A0%E7%9A%84%E6%9C%8D%E5%8A%A1">第三步，启动你的服务</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84-docker-%E9%95%9C%E5%83%8F">推荐一些好用的 Docker 镜像</a></li>
+<li><a href="#%E9%83%A8%E7%BD%B2%E4%B8%80%E6%97%B6%E7%88%BD%E8%BF%90%E7%BB%B4%E7%81%AB%E8%91%AC%E5%8E%82">部署一时爽，运维「火葬厂」</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://hwang.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://hwang.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'dTgTog99vAEi8ws6LDdFg4iI-gzGzoHsz',
+    appKey: 'CnvncVESy4G5mVQRxk1G9Uef',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '来都来了，不妨评论一下',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>
